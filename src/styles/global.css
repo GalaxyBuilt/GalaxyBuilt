@@ -27,6 +27,8 @@
     background-color: var(--bg-primary);
     color: var(--text-primary);
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   :root.dark {
@@ -46,7 +48,9 @@
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
     overflow-x: hidden;
+    position: relative;
   }
 
   h1,
@@ -89,6 +93,33 @@
   }
 }
 
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Custom Mesh Gradient Background */
 .mesh-bg {
   position: fixed;
@@ -99,10 +130,11 @@
   z-index: -1;
   background-color: var(--bg-primary);
   background-image:
-    radial-gradient(at 0% 0%, hsla(220, 100%, 50%, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(280, 100%, 50%, 0.1) 0px, transparent 50%),
+    radial-gradient(at var(--x, 0%) var(--y, 0%), hsla(220, 100%, 50%, 0.1) 0px, transparent 50%),
+    radial-gradient(at var(--nx, 100%) var(--ny, 0%), hsla(280, 100%, 50%, 0.1) 0px, transparent 50%),
     radial-gradient(at 50% 100%, hsla(190, 100%, 50%, 0.05) 0px, transparent 50%);
   opacity: var(--mesh-opacity);
+  transition: background-image 0.5s ease-out;
 }
 
 .noise-overlay {

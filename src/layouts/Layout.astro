@@ -25,6 +25,16 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+		<!-- OG Meta Tags -->
+		<meta property="og:title" content={`${title} | Galaxy Built`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/public/galaxybuilt_og_banner.png" />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={`${title} | Galaxy Built`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/public/galaxybuilt_og_banner.png" />
+
 		<script is:inline>
 			const theme = (() => {
 				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -46,11 +56,11 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<div class="mesh-bg"></div>
 		<div class="noise-overlay"></div>
 		
-		<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-center">
-			<div class="max-w-7xl w-full flex items-center justify-between px-6 py-3 glass-card rounded-2xl">
-				<a href="/" class="flex items-center gap-3 group">
-					<img src="/images/logo.jpg" alt="Galaxy Built Logo" class="w-10 h-10 rounded-xl object-cover ring-2 ring-white/10 group-hover:ring-accent-blue/50 transition-all" />
-					<span class="text-2xl font-black font-display tracking-tight hover:text-accent-blue transition-colors">GALAXY<span class="text-accent-blue font-light">BUILT</span></span>
+		<nav class="fixed top-0 w-full z-50 px-4 md:px-6 py-4 flex justify-center">
+			<div class="max-w-7xl w-full flex items-center justify-between px-4 md:px-6 py-3 glass-card rounded-2xl">
+				<a href="/" class="flex items-center gap-2 md:gap-3 group">
+					<img src="/images/logo.jpg" alt="Galaxy Built Logo" class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl object-cover ring-2 ring-white/10 group-hover:ring-accent-blue/50 transition-all" />
+					<span class="text-lg md:text-2xl font-black font-display tracking-tight hover:text-accent-blue transition-colors">GALAXY<span class="text-accent-blue font-light">BUILT</span></span>
 				</a>
 				
 				<div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-400">
@@ -69,13 +79,19 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 					</a>
 				</div>
 
-				<a href="mailto:exoticdevlabs@gmail.com" class="btn-primary text-xs tracking-widest uppercase">
-					Connect
-				</a>
+					<button id="themeToggleMobile" class="md:hidden p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
+						<Sun class="dark:hidden" size={20} />
+						<Moon class="hidden dark:block" size={20} />
+					</button>
+
+					<a href="mailto:dev@everrank.app" class="btn-primary text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6">
+						Connect
+					</a>
 			</div>
 		</nav>
 
 		<script>
+			// Theme Toggle
 			const handleToggleClick = () => {
 				const element = document.documentElement;
 				element.classList.toggle("dark");
@@ -85,6 +101,34 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 			};
 		
 			document.getElementById("themeToggle")?.addEventListener("click", handleToggleClick);
+			document.getElementById("themeToggleMobile")?.addEventListener("click", handleToggleClick);
+
+			// Interactive Mesh Background
+			document.addEventListener('mousemove', (e) => {
+				const x = (e.clientX / window.innerWidth) * 100;
+				const y = (e.clientY / window.innerHeight) * 100;
+				
+				document.documentElement.style.setProperty('--x', `${x}%`);
+				document.documentElement.style.setProperty('--y', `${y}%`);
+				document.documentElement.style.setProperty('--nx', `${100 - x}%`);
+				document.documentElement.style.setProperty('--ny', `${y}%`);
+			});
+
+			// Reveal on Scroll
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 		</script>
 
 		<main class="relative pt-32 pb-20 px-6">

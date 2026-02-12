@@ -113,19 +113,19 @@ const softwareProjects = [
 
 <Layout title="Home">
 	<!-- Hero Section -->
-	<section class="max-w-7xl mx-auto text-center space-y-8 py-20 relative">
-		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+	<section class="max-w-7xl mx-auto text-center space-y-8 py-12 md:py-20 relative px-4">
+		<div class="absolute -top-20 md:-top-40 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-accent-blue/20 rounded-full blur-[80px] md:blur-[120px] -z-10 animate-pulse"></div>
 		
-		<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-white/10 text-xs font-bold tracking-[0.2em] text-accent-cyan animate-in fade-in slide-in-from-bottom-4 duration-700">
+		<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-white/10 text-[10px] md:text-xs font-bold tracking-[0.2em] text-accent-cyan animate-in fade-in slide-in-from-bottom-4 duration-700">
 			<Cpu size={14} /> BUILDING THE FUTURE OF AUTONOMOUS SYSTEMS
 		</div>
 
-		<h1 class="text-6xl md:text-8xl font-black font-display tracking-tight leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
+		<h1 class="text-5xl md:text-8xl font-black font-display tracking-tight leading-[1] md:leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
 			GALAXY<br/>
 			<span class="text-gradient">BUILT.</span>
 		</h1>
 
-		<p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+		<p class="max-w-2xl mx-auto text-slate-500 text-base md:text-xl leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
 			Developing institutional-grade SaaS platforms, autonomous AI workflows, and proprietary trading systems. Scalable solutions for the next era of automation.
 		</p>
 
@@ -145,13 +145,88 @@ const softwareProjects = [
 				</a>
 			</div>
 		</div>
+
+		<!-- Tech Stack Marquee -->
+		<div class="pt-20 opacity-40 overflow-hidden relative w-full reveal-on-scroll">
+			<div class="flex gap-12 animate-marquee whitespace-nowrap items-center">
+				<span class="text-sm font-black tracking-widest uppercase">Astro</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Next.js</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Python</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Algorithmic Trading</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Google Gemini</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Cloudflare</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<!-- Duplicate for seamless loop -->
+				<span class="text-sm font-black tracking-widest uppercase">Astro</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Next.js</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Python</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Algorithmic Trading</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Google Gemini</span>
+				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+				<span class="text-sm font-black tracking-widest uppercase">Cloudflare</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Methodology Section -->
+	<section id="framework" class="max-w-7xl mx-auto py-32 px-6">
+		<div class="text-center space-y-4 mb-16 reveal-on-scroll">
+			<h2 class="text-4xl md:text-5xl font-black font-display">How We Build at <span class="text-gradient">Scale.</span></h2>
+			<p class="max-w-2xl mx-auto text-slate-500">
+				Galaxy Built isn’t just a collection of projects—it’s a framework. Every system and workflow is designed to scale, automate, and protect your operations at an institutional level.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<!-- Pillar 1: Autonomous Execution -->
+			<div class="glass-card p-8 rounded-[2rem] space-y-4 group reveal-on-scroll">
+				<div class="p-4 rounded-2xl bg-blue-500/10 text-blue-500 w-fit group-hover:scale-110 transition-transform duration-500">
+					<Rocket size={32} />
+				</div>
+				<h3 class="text-2xl font-bold font-display">Autonomous Execution</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">
+					Our systems run with minimal human intervention, leveraging automated pipelines and real-time monitoring to deploy thousands of guides or strategies without slowing down.
+				</p>
+			</div>
+
+			<!-- Pillar 2: Evergreen Scaling -->
+			<div class="glass-card p-8 rounded-[2rem] space-y-4 group reveal-on-scroll" style="transition-delay: 100ms;">
+				<div class="p-4 rounded-2xl bg-purple-500/10 text-purple-500 w-fit group-hover:scale-110 transition-transform duration-500">
+					<Cpu size={32} />
+				</div>
+				<h3 class="text-2xl font-bold font-display">Evergreen Scaling</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">
+					Designed for longevity and growth. Each tool is optimized for searchability and reproducible results—so your output compounds like capital over time.
+				</p>
+			</div>
+
+			<!-- Pillar 3: Institutional Security -->
+			<div class="glass-card p-8 rounded-[2rem] space-y-4 group reveal-on-scroll" style="transition-delay: 200ms;">
+				<div class="p-4 rounded-2xl bg-emerald-500/10 text-emerald-500 w-fit group-hover:scale-110 transition-transform duration-500">
+					<LineChart size={32} />
+				</div>
+				<h3 class="text-2xl font-bold font-display">Institutional Security</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">
+					Security isn’t optional. We integrate risk-tested frameworks and redundancies to protect both data and operations—matching top-tier institutional standards.
+				</p>
+			</div>
+		</div>
 	</section>
 
 	<!-- Projects Sections -->
 	<div id="projects" class="max-w-7xl mx-auto space-y-32 py-20">
 		
 		<!-- SaaS Section -->
-		<section id="saas" class="space-y-12">
+		<section id="saas" class="space-y-12 reveal-on-scroll">
 			<div class="flex items-center gap-6">
 				<div class="p-4 rounded-3xl glass-card text-accent-cyan">
 					<Rocket size={32} />
@@ -170,7 +245,7 @@ const softwareProjects = [
 		</section>
 
 		<!-- Megablogs Section -->
-		<section id="megablogs" class="space-y-12">
+		<section id="megablogs" class="space-y-12 reveal-on-scroll">
 			<div class="flex items-center gap-6">
 				<div class="p-4 rounded-3xl glass-card text-accent-cyan">
 					<Rocket size={32} />
@@ -189,7 +264,7 @@ const softwareProjects = [
 		</section>
 
 		<!-- Trading Systems -->
-		<section id="trading" class="space-y-12">
+		<section id="trading" class="space-y-12 reveal-on-scroll">
 			<div class="flex items-center gap-6">
 				<div class="p-4 rounded-3xl glass-card text-accent-purple">
 					<LineChart size={32} />
@@ -208,7 +283,7 @@ const softwareProjects = [
 		</section>
 
 		<!-- Software & Open Source -->
-		<section id="software" class="space-y-12">
+		<section id="software" class="space-y-12 reveal-on-scroll">
 			<div class="flex items-center gap-6">
 				<div class="p-4 rounded-3xl glass-card text-accent-blue">
 					<Code2 size={32} />
