@@ -147,32 +147,64 @@ const softwareProjects = [
 		</div>
 
 		<!-- Tech Stack Marquee -->
-		<div class="pt-20 opacity-40 overflow-hidden relative w-full reveal-on-scroll">
-			<div class="flex gap-12 animate-marquee whitespace-nowrap items-center">
-				<span class="text-sm font-black tracking-widest uppercase">Astro</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Next.js</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Python</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Algorithmic Trading</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Google Gemini</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Cloudflare</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+		<div class="pt-24 opacity-60 overflow-hidden relative w-full reveal-on-scroll">
+			<div class="flex gap-16 animate-marquee whitespace-nowrap items-center py-4">
+				<!-- Astro -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://astro.build/favicon.svg" class="w-8 h-8" alt="Astro" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Astro</span>
+				</div>
+				<!-- Next.js -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<svg class="w-8 h-8 fill-current" viewBox="0 0 114 114"><path d="M113.1 57C113.1 26.0163 87.9837 0.899994 57 0.899994C26.0163 0.899994 0.900002 26.0163 0.900002 57C0.900002 87.9837 26.0163 113.1 57 113.1C87.9837 113.1 113.1 87.9837 113.1 57ZM57 6.42582C84.9315 6.42582 107.574 29.0685 107.574 57C107.574 69.3409 103.149 80.6479 95.8118 89.4312L42.5332 21.6033C46.9458 19.3496 51.8483 18.0673 57.0396 18.0673C65.5786 18.0673 72.4939 24.9826 72.4939 33.5215C72.4939 34.7876 72.3411 35.9765 72.0696 37.1136L72.0105 37.336L71.8687 37.9131C71.3061 39.9161 70.4449 41.7699 69.3377 43.4357L69.3039 43.4839L69.172 43.681C68.966 43.9892 68.7538 44.2917 68.5358 44.5884L68.3283 44.8705L68.1742 45.071L68.043 45.2415L67.7539 45.6027C67.6536 45.7271 67.5516 45.8502 67.4481 45.9721L67.1423 46.3263L67.0166 46.471C66.8643 46.6453 66.7093 46.817 66.5518 46.9863L66.2412 47.3117L66.1124 47.4442C65.9592 47.6015 65.8037 47.7562 65.6459 47.9082L65.3286 48.2078L65.2016 48.327L65.0441 48.4735C64.887 48.6186 64.7277 48.7607 64.5664 48.8998L64.2497 49.1678L64.1165 49.2789L63.9593 49.4087L63.8016 49.5375L63.4832 49.7915C63.3855 49.8684 63.2869 49.9443 63.1873 50.0191L62.8794 50.245L62.7483 50.3402C62.6108 50.4394 62.4716 50.5369 62.331 50.6327L62.0177 50.842L61.8841 50.9301L61.7339 51.0284L61.5832 51.1251L61.2787 51.3164L61.1396 51.4026L57.5147 53.6401L104.99 111.451H104.99C104.99 111.451 104.99 111.451 104.99 111.451L53.9547 49.3323L53.9547 95.8953H42.707V28.5996L100.931 99.8005C105.208 87.7265 107.574 74.5824 107.574 57C107.574 29.0685 84.9315 6.42582 57 6.42582Z"></path></svg>
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Next.js</span>
+				</div>
+				<!-- Python -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/python.svg" class="w-8 h-8" alt="Python" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Python</span>
+				</div>
+				<!-- Trading -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<LineChart size={32} class="text-accent-purple" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Trading Algos</span>
+				</div>
+				<!-- Gemini -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d47353047313dfa4f20.svg" class="w-8 h-8" alt="Gemini" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Generative AI</span>
+				</div>
+				<!-- Cloudflare -->
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg" class="w-8 h-8" alt="Cloudflare" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Cloudflare</span>
+				</div>
+
 				<!-- Duplicate for seamless loop -->
-				<span class="text-sm font-black tracking-widest uppercase">Astro</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Next.js</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Python</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Algorithmic Trading</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Google Gemini</span>
-				<span class="w-1 h-1 rounded-full bg-slate-500"></span>
-				<span class="text-sm font-black tracking-widest uppercase">Cloudflare</span>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://astro.build/favicon.svg" class="w-8 h-8" alt="Astro" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Astro</span>
+				</div>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<svg class="w-8 h-8 fill-current" viewBox="0 0 114 114"><path d="M113.1 57C113.1 26.0163 87.9837 0.899994 57 0.899994C26.0163 0.899994 0.900002 26.0163 0.900002 57C0.900002 87.9837 26.0163 113.1 57 113.1C87.9837 113.1 113.1 87.9837 113.1 57ZM57 6.42582C84.9315 6.42582 107.574 29.0685 107.574 57C107.574 69.3409 103.149 80.6479 95.8118 89.4312L42.5332 21.6033C46.9458 19.3496 51.8483 18.0673 57.0396 18.0673C65.5786 18.0673 72.4939 24.9826 72.4939 33.5215C72.4939 34.7876 72.3411 35.9765 72.0696 37.1136L72.0105 37.336L71.8687 37.9131C71.3061 39.9161 70.4449 41.7699 69.3377 43.4357L69.3039 43.4839L69.172 43.681C68.966 43.9892 68.7538 44.2917 68.5358 44.5884L68.3283 44.8705L68.1742 45.071L68.043 45.2415L67.7539 45.6027C67.6536 45.7271 67.5516 45.8502 67.4481 45.9721L67.1423 46.3263L67.0166 46.471C66.8643 46.6453 66.7093 46.817 66.5518 46.9863L66.2412 47.3117L66.1124 47.4442C65.9592 47.6015 65.8037 47.7562 65.6459 47.9082L65.3286 48.2078L65.2016 48.327L65.0441 48.4735C64.887 48.6186 64.7277 48.7607 64.5664 48.8998L64.2497 49.1678L64.1165 49.2789L63.9593 49.4087L63.8016 49.5375L63.4832 49.7915C63.3855 49.8684 63.2869 49.9443 63.1873 50.0191L62.8794 50.245L62.7483 50.3402C62.6108 50.4394 62.4716 50.5369 62.331 50.6327L62.0177 50.842L61.8841 50.9301L61.7339 51.0284L61.5832 51.1251L61.2787 51.3164L61.1396 51.4026L57.5147 53.6401L104.99 111.451H104.99C104.99 111.451 104.99 111.451 104.99 111.451L53.9547 49.3323L53.9547 95.8953H42.707V28.5996L100.931 99.8005C105.208 87.7265 107.574 74.5824 107.574 57C107.574 29.0685 84.9315 6.42582 57 6.42582Z"></path></svg>
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Next.js</span>
+				</div>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/python.svg" class="w-8 h-8" alt="Python" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Python</span>
+				</div>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<LineChart size={32} class="text-accent-purple" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Trading Algos</span>
+				</div>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d47353047313dfa4f20.svg" class="w-8 h-8" alt="Gemini" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Generative AI</span>
+				</div>
+				<div class="flex items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+					<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg" class="w-8 h-8" alt="Cloudflare" />
+					<span class="text-sm font-black tracking-widest uppercase text-slate-500 dark:text-slate-400">Cloudflare</span>
+				</div>
 			</div>
 		</div>
 	</section>
