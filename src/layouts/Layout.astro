@@ -15,7 +15,11 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Galaxy Built</title>
 		<meta name="description" content={description} />
@@ -28,12 +32,12 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<!-- OG Meta Tags -->
 		<meta property="og:title" content={`${title} | Galaxy Built`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/images/x-banner.jpg" />
+		<meta property="og:image" content="/og-hero.jpg" />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={`${title} | Galaxy Built`} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/images/x-banner.jpg" />
+		<meta name="twitter:image" content="/og-hero.jpg" />
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json">
