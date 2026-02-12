@@ -13,7 +13,7 @@ I recommend **Astro** for this project.
 > Please confirm if you'd like to proceed with Astro. I will start the initialization based on this recommendation.
 
 > [!NOTE]
-> I will initialize the GitHub repository as requested: `https://github.com/GalaxyBuilt/GalaxyBuilt-site`.
+> I will initialize the GitHub repository as requested: `https://github.com/GalaxyBuilt/GalaxyBuilt`.
 
 ## Proposed Changes
 
