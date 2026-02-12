@@ -20,9 +20,9 @@
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --border-color: rgba(0, 0, 0, 0.05);
-    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: rgba(0, 0, 0, 0.08);
-    --mesh-opacity: 0.4;
+    --mesh-opacity: 0;
 
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -37,9 +37,9 @@
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --border-color: rgba(255, 255, 255, 0.05);
-    --glass-bg: rgba(10, 10, 12, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --mesh-opacity: 0.15;
+    --glass-bg: rgba(10, 10, 12, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --mesh-opacity: 1;
 
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -152,7 +152,7 @@
   background-attachment: fixed;
   z-index: -1;
   opacity: 0.85;
-  filter: contrast(1.1) brightness(1.2);
+  filter: contrast(1.1) brightness(1.2) saturate(1.3);
 }
 
 .noise-overlay {
