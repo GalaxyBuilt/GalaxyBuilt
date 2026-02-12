@@ -15,6 +15,8 @@
     - [x] Mobile Optimizations (Centering, overflow, toggle) [ ]
 - [x] SEO Optimization [/]
     - [x] Refine Meta Tags (Title, Description, OG) [ ]
+    - [x] Add Google Search Console Verification [x]
+    - [x] Add Google Analytics Tracking [x]
     - [x] Configure og-hero.jpg as default social image [ ]
     - [x] Add JSON-LD Structured Data [ ]
     - [x] Create robots.txt [ ]
