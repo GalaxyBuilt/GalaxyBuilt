@@ -17,7 +17,10 @@ const saasProjects = [
 		url: "https://FastAIFlow.com",
 		type: "saas",
 		tags: ["AI Workflows", "Automation", "Low-Code", "Scalable Architecture"]
-	},
+	}
+];
+
+const megablogProjects = [
 	{
 		title: "Txchyon.com",
 		description: "Institutional-grade crypto and DeFi 'Megablog' built for serious traders and investors. Features 15+ central pillars with a roadmap to 3,000 evergreen guides, turning complex strategies into structured systems.",
@@ -107,7 +110,7 @@ const softwareProjects = [
 		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 		
 		<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-white/10 text-xs font-bold tracking-[0.2em] text-accent-cyan animate-in fade-in slide-in-from-bottom-4 duration-700">
-			<Rocket size={14} /> BUILDING THE FUTURE OF AUTONOMOUS SYSTEMS
+			<Cpu size={14} /> BUILDING THE FUTURE OF AUTONOMOUS SYSTEMS
 		</div>
 
 		<h1 class="text-6xl md:text-8xl font-black font-display tracking-tight leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
@@ -147,13 +150,32 @@ const softwareProjects = [
 					<Rocket size={32} />
 				</div>
 				<div>
-					<h2 class="text-4xl font-black font-display">SaaS Platforms</h2>
-					<p class="text-slate-500">Autonomous platforms scaling search dominance and AI workflows.</p>
+					<h2 class="text-4xl font-black font-display text-white">SaaS Platforms</h2>
+					<p class="text-slate-500">Autonomous systems scaling search dominance and AI workflows.</p>
 				</div>
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{saasProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
+		<!-- Megablogs Section -->
+		<section id="megablogs" class="space-y-12">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-cyan">
+					<Rocket size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display text-white">Megablogs</h2>
+					<p class="text-slate-500">Large-scale evergreen content hubs with thousands of guides.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{megablogProjects.map(project => (
 					<ProjectCard {...project} />
 				))}
 			</div>
