@@ -28,12 +28,30 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<!-- OG Meta Tags -->
 		<meta property="og:title" content={`${title} | Galaxy Built`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/public/galaxybuilt_og_banner.png" />
+		<meta property="og:image" content="/images/x-banner.jpg" />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={`${title} | Galaxy Built`} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/public/galaxybuilt_og_banner.png" />
+		<meta name="twitter:image" content="/images/x-banner.jpg" />
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Galaxy Built",
+				"url": "https://galaxybuilt.com",
+				"image": "https://galaxybuilt.com/images/logo.jpg",
+				"sameAs": [
+					"https://github.com/galaxybuilt",
+					"https://x.com/galaxybuilt",
+					"https://www.linkedin.com/in/galaxybuilt/"
+				],
+				"jobTitle": "Developer & Systems Architect",
+				"description": "Institutional-grade SaaS platforms, autonomous AI workflows, and proprietary trading systems."
+			}
+		</script>
 
 		<script is:inline>
 			const theme = (() => {
