@@ -22,5 +22,6 @@
 - [x] Final Polish & Assets [/]
     - [x] Integrate custom Favicon Kit [ ]
     - [x] Update Site Manifest [ ]
+    - [x] Dark Mode Background (og-hero.jpg integrated) [ ]
     - [x] Verification and testing [ ]
     - [x] Final Git push [ ]
