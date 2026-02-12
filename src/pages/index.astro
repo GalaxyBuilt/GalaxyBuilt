@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket } from 'lucide-astro';
+
+const saasProjects = [
+	{
+		title: "EverRank.app",
+		description: "Autonomous SEO and content intelligence platform. AI-powered insights, keyword tracking, and competitor analysis in a single dashboard.",
+		url: "https://EverRank.app",
+		type: "saas",
+		tags: ["SEO", "AI", "Automation"]
+	},
+	{
+		title: "FastAIFlow.com",
+		description: "Autonomous AI workflow platform. Streamline creation, deployment, and management of AI-powered applications without repetitive code.",
+		url: "https://FastAIFlow.com",
+		type: "saas",
+		tags: ["AI Workflows", "Low-Code", "Automation"]
+	},
+	{
+		title: "Txchyon.com",
+		description: "Institutional-grade crypto and DeFi knowledge hub. Deep research, evergreen guides, and actionable playbooks for serious traders.",
+		url: "https://txchyon.com",
+		type: "saas",
+		tags: ["DeFi", "Crypto", "Education"]
+	},
+	{
+		title: "RoofingMeter.com",
+		description: "Specialized platform for roofing contractors and professionals. Accurate real-time data, project metrics, and performance insights.",
+		url: "https://roofingmeter.com",
+		type: "saas",
+		tags: ["Construction", "Analytics", "SaaS"]
+	},
+	{
+		title: "AutoInsureGuides.com",
+		description: "Resource for navigating auto insurance. Practical guides on coverage, rates, and policies for informed decisions.",
+		url: "https://autoinsureguides.com",
+		type: "saas",
+		tags: ["Insurance", "Guides", "Accessibility"]
+	}
+];
+
+const tradingProjects = [
+	{
+		title: "Project Ultima",
+		description: "Secret research system for market intelligence. Advanced data analysis and predictive modeling for high-stakes execution.",
+		type: "trading",
+		tags: ["AI", "Intelligence", "Secret"]
+	},
+	{
+		title: "Project Omega",
+		description: "Secret Pumpfun system. Specialized automated trading strategy for rapid market shifts and liquidity events.",
+		type: "trading",
+		tags: ["High-Frequency", "Automation"]
+	},
+	{
+		title: "Project Genesis",
+		description: "Institutional-grade Bitcoin trading system. Combines market analysis, algorithmic execution, and risk management.",
+		type: "trading",
+		tags: ["Bitcoin", "Algo-Trading", "Risk Mgmt"]
+	}
+];
+
+const softwareProjects = [
+	{
+		title: "Nova",
+		description: "Fast, modular Code + SEO Health Scanner for developers. Scan projects in under a minute for issues and hotspots.",
+		github: "https://github.com/GalaxyBuilt/Nova-Seo-Scanner",
+		type: "software",
+		tags: ["SEO Scanner", "Node.js", "Open Source"]
+	},
+	{
+		title: "CodeSnap",
+		description: "Menu bar code capture utility. Instantly capture code, detect language, and save with AI tagging.",
+		github: "https://github.com/GalaxyBuilt/CodeSnap",
+		type: "software",
+		tags: ["Utility", "AI Tagging", "Desktop App"]
+	},
+	{
+		title: "AI-Prompt-Builder",
+		description: "Generate niche-specific prompts for SEO, content, and social media. Customize tone and workflow chains.",
+		github: "https://github.com/GalaxyBuilt/ai-prompt-builder",
+		type: "software",
+		tags: ["Prompt Eng", "AI Tools"]
+	},
+	{
+		title: "Next-Scanner",
+		description: "Next.js Performance Auditor. Scan apps for speed issues and SEO impact scores.",
+		github: "https://github.com/GalaxyBuilt/Next-Scanner",
+		type: "software",
+		tags: ["Next.js", "Performance"]
+	},
+	{
+		title: "ContentIQ",
+		description: "Autonomous AI content engine. Plans, creates, optimizes, and audits blog content in structured phases.",
+		github: "https://github.com/GalaxyBuilt/contentIQ",
+		type: "software",
+		tags: ["AI Content", "SEO Strategy"]
+	}
+];
+---
+
+<Layout title="Home">
+	<!-- Hero Section -->
+	<section class="max-w-7xl mx-auto text-center space-y-8 py-20 relative">
+		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+		
+		<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-white/10 text-xs font-bold tracking-[0.2em] text-accent-cyan animate-in fade-in slide-in-from-bottom-4 duration-700">
+			<Rocket size={14} /> BUILDING THE FUTURE OF AUTONOMOUS SYSTEMS
+		</div>
+
+		<h1 class="text-6xl md:text-8xl font-black font-display tracking-tight leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
+			GALAXY<br/>
+			<span class="text-gradient">BUILT.</span>
+		</h1>
+
+		<p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+			Developing institutional-grade SaaS platforms, autonomous AI workflows, and proprietary trading systems. Scalable solutions for the next era of automation.
+		</p>
+
+		<div class="flex flex-wrap justify-center gap-4 pt-4 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-450">
+			<a href="#projects" class="btn-primary flex items-center gap-2">
+				Explores Projects <ArrowRight size={18} />
+			</a>
+			<div class="flex gap-2">
+				<a href="https://github.com/galaxybuilt" target="_blank" class="p-3 rounded-full glass-card hover:text-white transition-colors">
+					<Github size={20} />
+				</a>
+				<a href="https://x.com/galaxybuilt" target="_blank" class="p-3 rounded-full glass-card hover:text-white transition-colors">
+					<Twitter size={20} />
+				</a>
+				<a href="https://www.linkedin.com/in/galaxybuilt/" target="_blank" class="p-3 rounded-full glass-card hover:text-white transition-colors">
+					<Linkedin size={20} />
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Sections -->
+	<div id="projects" class="max-w-7xl mx-auto space-y-32 py-20">
+		
+		<!-- SaaS Section -->
+		<section id="saas" class="space-y-12">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-cyan">
+					<Rocket size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display">SaaS Platforms</h2>
+					<p class="text-slate-500">Autonomous platforms scaling search dominance and AI workflows.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{saasProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
+		<!-- Trading Systems -->
+		<section id="trading" class="space-y-12">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-purple">
+					<LineChart size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display text-white">Trading Systems</h2>
+					<p class="text-slate-500">Institutional-grade execution and secret research systems.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{tradingProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
+		<!-- Software & Open Source -->
+		<section id="software" class="space-y-12">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-blue">
+					<Code2 size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display text-white">Software & Tools</h2>
+					<p class="text-slate-500">Modular scanners, AI utilities, and developer productivity tools.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{softwareProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
+	</div>
+
+	<!-- CTA Section -->
+	<section class="max-w-4xl mx-auto py-32 text-center">
+		<div class="glass-card p-12 rounded-[3rem] space-y-8 relative overflow-hidden group">
+			<div class="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-accent-purple/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+			<h2 class="text-4xl font-black font-display">Ready to build something <span class="text-gradient">Institutional?</span></h2>
+			<p class="text-slate-400">Reach out for collaborations or project inquiries.</p>
+			<a href="mailto:exoticdevlabs@gmail.com" class="btn-primary inline-flex items-center gap-3">
+				GET IN TOUCH <Mail size={20} />
+			</a>
+		</div>
+	</section>
+</Layout>
