@@ -49,6 +49,6 @@
     - [x] Add head init script
     - [x] Swap Sun/Moon icons
     - [x] Verify persistence
-- [ ] Ensure explicit visibility for Theme Toggle icons [/]
-- [ ] Final visual audit across all devices
-- [ ] Final Git push
+- [x] Ensure explicit visibility for Theme Toggle icons [x]
+- [x] Final visual audit across all devices
+- [x] Final Git push
