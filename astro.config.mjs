@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://galaxybuilt.com',
+  site: 'https://galaxybuilt.dev',
   vite: {
     plugins: [tailwindcss()]
   },

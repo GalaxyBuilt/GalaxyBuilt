@@ -14,13 +14,13 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 <html lang="en">
 	<head>
 		<!-- Google tag (gtag.js) -->
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-MG3SN0BC9E"></script>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SD1015FGKZ"></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 
-			gtag('config', 'G-MG3SN0BC9E');
+			gtag('config', 'G-SD1015FGKZ');
 		</script>
 
 		<meta charset="UTF-8" />
@@ -31,8 +31,9 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<link rel="manifest" href="/site.webmanifest" />
 
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Galaxy Built</title>
+		<title>{title.includes('Galaxy Built') ? title : `${title} | Galaxy Built`}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,14 +41,15 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 		<!-- OG Meta Tags -->
-		<meta property="og:title" content={`${title} | Galaxy Built`} />
+		<meta property="og:title" content={title.includes('Galaxy Built') ? title : `${title} | Galaxy Built`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/og-hero.jpg" />
+		<meta property="og:image" content={new URL('/og-hero.jpg', Astro.site)} />
+		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={`${title} | Galaxy Built`} />
+		<meta name="twitter:title" content={title.includes('Galaxy Built') ? title : `${title} | Galaxy Built`} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/og-hero.jpg" />
+		<meta name="twitter:image" content={new URL('/og-hero.jpg', Astro.site)} />
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json">
@@ -55,8 +57,8 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 				"@context": "https://schema.org",
 				"@type": "Person",
 				"name": "Galaxy Built",
-				"url": "https://galaxybuilt.com",
-				"image": "https://galaxybuilt.com/images/logo.jpg",
+				"url": "https://galaxybuilt.dev",
+				"image": "https://galaxybuilt.dev/images/logo.jpg",
 				"sameAs": [
 					"https://github.com/galaxybuilt",
 					"https://x.com/galaxybuilt",
@@ -92,21 +94,21 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 			<div class="max-w-7xl w-full flex items-center justify-between px-4 md:px-6 py-3 glass-card rounded-2xl">
 				<a href="/" class="flex items-center gap-2 md:gap-3 group">
 					<img src="/images/logo.jpg" alt="Galaxy Built Logo" class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl object-cover ring-2 ring-white/10 group-hover:ring-accent-blue/50 transition-all" />
-					<span class="text-lg md:text-2xl font-black font-display tracking-tight hover:text-accent-blue transition-colors">GALAXY<span class="text-accent-blue font-light">BUILT</span></span>
+					<span class="text-lg md:text-2xl font-black font-display tracking-tight text-slate-900 dark:text-white hover:text-accent-blue transition-colors">GALAXY<span class="text-accent-blue font-light">BUILT</span></span>
 				</a>
 				
-				<div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-400">
-					<a href="#saas" class="hover:text-white transition-colors">SaaS</a>
-					<a href="#megablogs" class="hover:text-white transition-colors">Megablogs</a>
-					<a href="#trading" class="hover:text-white transition-colors">Trading</a>
-					<a href="#software" class="hover:text-white transition-colors">Software</a>
+				<div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-500 dark:text-slate-400">
+					<a href="#saas" class="hover:text-black dark:hover:text-white transition-colors">SaaS</a>
+					<a href="#megablogs" class="hover:text-black dark:hover:text-white transition-colors">Megablogs</a>
+					<a href="#trading" class="hover:text-black dark:hover:text-white transition-colors">Trading</a>
+					<a href="#software" class="hover:text-black dark:hover:text-white transition-colors">Software</a>
 					
-					<button id="themeToggle" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
+					<button id="themeToggle" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
 						<Sun class="dark:hidden" size={20} />
 						<Moon class="hidden dark:block" size={20} />
 					</button>
 
-					<a href="https://x.com/galaxybuilt" target="_blank" class="hover:text-white transition-colors">
+					<a href="https://x.com/galaxybuilt" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">
 						<Twitter size={18} />
 					</a>
 				</div>
@@ -174,11 +176,11 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 					<span class="font-display font-bold tracking-tighter">GALAXYBUILT © 2026</span>
 				</div>
 				<div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-					<a href="mailto:dev@everrank.app" class="hover:text-white transition-colors">Contact</a>
-					<a href="https://github.com/GalaxyBuilt/GalaxyBuilt" class="hover:text-white transition-colors">GitHub</a>
-					<a href="https://x.com/galaxybuilt" class="hover:text-white transition-colors">X / Twitter</a>
-					<a href="https://www.linkedin.com/in/galaxybuilt/" class="hover:text-white transition-colors">LinkedIn</a>
-					<a href="https://dev.txchyon.com" class="hover:text-white transition-colors">Blog</a>
+					<a href="mailto:dev@everrank.app" class="hover:text-black dark:hover:text-white transition-colors">Contact</a>
+					<a href="https://github.com/GalaxyBuilt/GalaxyBuilt" class="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
+					<a href="https://x.com/galaxybuilt" class="hover:text-black dark:hover:text-white transition-colors">X / Twitter</a>
+					<a href="https://www.linkedin.com/in/galaxybuilt/" class="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
+					<a href="https://dev.txchyon.com" class="hover:text-black dark:hover:text-white transition-colors">Blog</a>
 				</div>
 			</div>
 		</footer>

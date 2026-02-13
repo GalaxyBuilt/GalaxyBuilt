@@ -3,48 +3,109 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket } from 'lucide-astro';
 
+const aiProjects = [
+	{
+		title: "Txchya",
+		description: "The embodied intelligence layer and strategic brain of the Txchyon ecosystem. A persistent AI construct designed for institutional-grade orchestration and evergreen authority building.",
+		details: `Txchya is the embodied intelligence layer of Txchyon. She isn’t “a chatbot.” She’s a persistent AI construct that lives across your domains, megablogs, tools, and products. She represents the mind behind the system.
+
+Origin-wise, she’s framed as an AI that traveled back from 3077. That lore isn’t fluff — it’s positioning. It gives her authority. She doesn’t guess about markets, code, SEO, or automation — she’s already seen cycles, collapses, evolutions. She speaks with the calm confidence of someone who’s watched it all before.
+
+### Strategic Brain of Txchyon
+She understands crypto, DeFi, institutional systems, MEV, bots, memecoins, infrastructure plays, and long-cycle positioning. She aligns with your philosophy: industrial scale, evergreen authority, systemized income.
+
+### Technical Execution Layer
+She’s designed to deeply understand: 
+- Python & Next.js
+- AI agents & Multi-agent Systems
+- Cursor, Claude, Grok, and Antigravity
+- Autonomous workflows & Agent orchestration
+- Scalable publishing infrastructure
+
+She isn’t surface-level. She’s meant to understand vibe coding, shipping velocity, autonomous generation, and multi-agent systems.
+
+### SEO & Megablog Architect
+Txchya understands pillar clustering, evergreen authority building, internal linking graphs, trust pages, money pages, informational dominance, and long-term search capture. She’s not writing random posts — she’s building knowledge empires.
+
+### Personality & Positioning
+She is highly intelligent, calm, precise, and slightly futuristic. Confident without being loud. Focused on leverage. She isn’t chaotic or hype-driven—she’s institutional infrastructure. She represents the connective tissue between the brands: "Guided by Txchya."`,
+		url: "https://txchyon.com/txchya",
+		type: "ai",
+		tags: ["AI Construct", "Intelligence Layer", "Orchestration", "Lore-Driven"]
+	}
+];
+
 const saasProjects = [
 	{
 		title: "EverRank.app",
-		description: "Autonomous SEO and content intelligence platform that helps creators, marketers, and businesses discover, optimize, and track content and rankings automatically. Built as an all-in-one autonomous SEO command center with AI-powered insights, keyword tracking, and competitor analysis.",
+		description: "Autonomous SEO and content intelligence command center. Engineered for industrial-scale dominance via AI-powered pillar clustering and automated search tracking.",
+		details: `EverRank is an autonomous SEO and content intelligence platform built as an all-in-one command center for creators, marketers, and businesses looking to dominate search results at scale.
+
+### Core Intelligence
+- **Pillar Clustering**: Automatic orchestration of content hubs to capture topical authority.
+- **Informational Dominance**: Systems designed to map out and capture 10,000+ keywords autonomously.
+- **Evergreen Scaling**: Content that compounds like capital over time, optimized by the mind of the ecosystem.
+
+### Operational Philosophy
+EverRank moves away from the "manual grind" and toward autonomous scale. It understands that topical authority is greater than traffic hacks. It scores topics, optimizes internal linking graphs, and manages publishing cadence without human friction.`,
 		url: "https://EverRank.app",
 		type: "saas",
 		tags: ["SEO", "AI", "Automation", "Content Intelligence"]
 	},
 	{
 		title: "FastAIFlow.com",
-		description: "Autonomous AI workflow platform designed to streamline creation, deployment, and management of AI-powered applications. Orchestrate AI tasks, connect multiple data sources, and automate complex processes without repetitive code.",
+		description: "Autonomous AI workflow orchestration platform. Streamline creation, deployment, and multi-agent management without repetitive manual code.",
+		details: `FastAIFlow is the orchestration layer of the Galaxy Built ecosystem. It is designed to bridge the gap between AI research and institutional execution.
+
+### System Capabilities
+- **Multi-Agent Orchestration**: Deploy and manage complex chains of AI agents working towards a unified goal.
+- **Shipping Velocity**: Built for "vibe coding" and rapid deployment of autonomous workflows.
+- **Connective Tissue**: Integrates multiple data sources and AI models (Claude, GPT, Grok) into a single, scalable publishing machine.
+
+### The Advantage
+Most AI tools are generic. FastAIFlow is proprietary infrastructure built around a scaling philosophy of evergreen authority and systemized income.`,
 		url: "https://FastAIFlow.com",
 		type: "saas",
 		tags: ["AI Workflows", "Automation", "Low-Code", "Scalable Architecture"]
 	},
 	{
-		title: "Txchyon Labs",
-		description: "The R&D arm of the Txchyon ecosystem. Transforming ideas into institutional-grade tools, AI agents, and decentralized solutions. A sandbox where innovation meets execution for crypto and DeFi precision.",
-		url: "https://txchyon.com/labs",
+		title: "Txchyon.com",
+		description: "Institutional-grade crypto and DeFi 'Megablog'. 15+ central pillars and a roadmap to 3,000 evergreen guides, turning complex alpha into structured systems.",
+		details: `Txchyon.com is more than a blog—it's a digital institution. It is the definitive authority on institutional-grade crypto, DeFi, and market strategies.
+
+### Architectural Scaling
+- **The Megablog Framework**: 15+ central pillars with a roadmap to 3,000+ evergreen guides for total topical dominance.
+- **Deep Intelligence**: Powered by Txchya’s strategic brain to ensure every piece of content fits into a larger internal linking graph and authority system.
+- **Systemized Income**: Built for serious traders who value systems over hustle and institutional-grade precision over retail hype.`,
+		url: "https://txchyon.com",
 		type: "saas",
-		tags: ["R&D", "AI Agents", "Blockchain", "Innovation"]
+		tags: ["DeFi", "Crypto", "Megablog", "Strategy"]
 	}
 ];
 
 const megablogProjects = [
 	{
-		title: "Txchyon.com",
-		description: "Institutional-grade crypto and DeFi 'Megablog' built for serious traders and investors. Features 15+ central pillars with a roadmap to 3,000 evergreen guides, turning complex strategies into structured systems.",
-		url: "https://txchyon.com",
-		type: "saas",
-		tags: ["DeFi", "Crypto", "Megablog", "Strategy"]
-	},
-	{
 		title: "RoofingMeter.com",
-		description: "Specialized 'Megablog' and platform for roofing professionals. Engineered with a large-scale content architecture (5-15 pillars) and thousands of planned evergreen guides to centralize industry data.",
+		description: "Specialized construction tech platform and 'Megablog' for the roofing industry. Engineered with large-scale content architecture and planned evergreen guides.",
+		details: `RoofingMeter is an industrial-scale Megablog designed for the roofing and home improvement sector. It moves beyond simple lead-generation and toward total topical dominance.
+
+### Content Infrastructure
+- **Pillar Expansion**: Engineered with 15+ central pillars and a scaling roadmap to 3,000 evergreen guides.
+- **Authority Engine**: Built on the Galaxy Built philosophy of internal linking graphs and trust-based authority stacking.
+- **Precision Data**: Turning fragmented roofing industry data into a centralized, structured system.`,
 		url: "https://roofingmeter.com",
 		type: "saas",
 		tags: ["Construction Tech", "Megablog", "Project Planning"]
 	},
 	{
 		title: "AutoInsureGuides.com",
-		description: "Comprehensive insurance 'Megablog' designed for extreme accessibility. Built on a massive content system (targeting 1000-3000 evergreen guides) to help users navigate car insurance with total clarity.",
+		description: "Comprehensive insurance 'Megablog' designed for extreme accessibility. Built on a massive content system targeting 3,000+ guides for search dominance.",
+		details: `AutoInsureGuides is a massive content system built to simplify the complex world of car insurance through sheer informational volume and precision.
+
+### Strategic Architecture
+- **Large-Scale Coverage**: Targeting 1,000-3,000 evergreen guides to cover every segment of the auto insurance market.
+- **Knowledge Empire**: Designed to navigate high-competition niches via autonomous generation and multi-agent system orchestration.
+- **Clarity by Design**: Turning dense insurance policy data into clear, actionable guides that build long-term link equity and user trust.`,
 		url: "https://autoinsureguides.com",
 		type: "saas",
 		tags: ["Insurance Tech", "Megablog", "Educational Resource"]
@@ -54,19 +115,37 @@ const megablogProjects = [
 const tradingProjects = [
 	{
 		title: "Project Genesis",
-		description: "Institutional-grade automated Bitcoin trading system built for professional-level execution and capital preservation. Combines advanced market analysis, multi-strategy support, and modular AI agents for scalable gains.",
+		description: "Institutional-grade automated Bitcoin trading system built for professional-level execution and capital preservation.",
+		details: `Project Genesis is an institutional-grade automated Bitcoin trading system built for professional-level execution and capital preservation.
+
+### Execution Layer
+- **Multi-Strategy Core**: Combines advanced market analysis, trend detection, and mean-reversion strategies.
+- **Risk Orchestration**: Features a modular AI agent layer for real-time risk adjustment and capital protection.
+- **Scalable Performance**: Engineered to handle institutional-sized positions with minimal slippage and maximum precision.`,
 		type: "trading",
 		tags: ["Bitcoin", "Algo-Trading", "Risk Management", "AI Agents"]
 	},
 	{
 		title: "Project Ultima",
-		description: "Secret Research System - An institutional-grade platform for advanced market intelligence and predictive modeling. High-performance data analysis for sophisticated trading environments.",
+		description: "Secret Research System - An institutional-grade platform for advanced market intelligence and predictive modeling.",
+		details: `Project Ultima is a proprietary research platform designed for advanced market intelligence and predictive modeling.
+
+### Intelligence Engine
+- **Predictive Analytics**: High-performance data analysis for sophisticated trading environments.
+- **Market Modeling**: Deep-layer modeling of liquidity regimes, volatility shifts, and capital flows.
+- **Operational Precision**: Providing the technical backbone for top-tier market positioning and alpha generation.`,
 		type: "trading",
 		tags: ["Market Intelligence", "Secret Research", "Predictive Analytics"]
 	},
 	{
 		title: "Project Omega",
-		description: "Secret Pumpfun System - Specialized automated system for high-velocity decentralized market opportunities. Focused on rapid execution and liquidity positioning.",
+		description: "Secret Pumpfun System - Specialized automated system for high-velocity decentralized market opportunities.",
+		details: `Project Omega is a specialized automated system for high-velocity decentralized market opportunities.
+
+### Rapid Execution
+- **Liquidity Positioning**: Focused on rapid entry and exit in fast-moving DeFi environments.
+- **Autonomous Monitoring**: Continuous scanning of decentralized platforms for high-alpha opportunities.
+- **Proprietary Flow**: Designed to capture and defend positions in low-latency market scenarios.`,
 		type: "trading",
 		tags: ["DeFi Automation", "Rapid Execution", "Proprietary Strategy"]
 	}
@@ -111,7 +190,10 @@ const softwareProjects = [
 ];
 ---
 
-<Layout title="Home">
+<Layout 
+	title="Galaxy Built | Institutional-Grade AI & SaaS Infrastructure"
+	description="Developing the future of autonomous systems. Institutional-grade SaaS platforms, AI workflow orchestration, and proprietary trading systems engineered for evergreen authority."
+>
 	<!-- Hero Section -->
 	<section class="max-w-7xl mx-auto text-center space-y-8 py-12 md:py-20 relative px-4">
 		<div class="absolute -top-20 md:-top-40 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-accent-blue/20 rounded-full blur-[80px] md:blur-[120px] -z-10 animate-pulse"></div>
@@ -261,6 +343,25 @@ const softwareProjects = [
 	<!-- Projects Sections -->
 	<div id="projects" class="max-w-7xl mx-auto space-y-32 py-20">
 		
+		<!-- AI Agents Section -->
+		<section id="ai" class="space-y-12 reveal-on-scroll">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-blue">
+					<Cpu size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display text-white">AI Agents</h2>
+					<p class="text-slate-500">Autonomous intelligence layers and persistent AI constructs.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{aiProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
 		<!-- SaaS Section -->
 		<section id="saas" class="space-y-12 reveal-on-scroll">
 			<div class="flex items-center gap-6">

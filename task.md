@@ -15,12 +15,17 @@
     - [x] Mobile Optimizations (Centering, overflow, toggle) [ ]
 - [x] SEO Optimization [/]
     - [x] Refine Meta Tags (Title, Description, OG) [ ]
+    - [x] Add `Txchya` to `index.astro` with full lore
     - [x] Add Google Search Console Verification [x]
     - [x] Add Google Analytics Tracking [x]
     - [x] Configure og-hero.jpg as default social image [ ]
     - [x] Add JSON-LD Structured Data [ ]
     - [x] Create robots.txt [ ]
     - [x] Install & Configure Sitemap integration [ ]
+- [x] Optimize Homepage SEO (title & meta description)
+- [/] Fix light mode character visibility in header/footer
+- [ ] Create dedicated "AI Agents" section above SaaS platforms
+- [ ] Verify UI and functionality across themes
 - [x] Final Polish & Assets [/]
     - [x] Integrate custom Favicon Kit [ ]
     - [x] Update Site Manifest [ ]
