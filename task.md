@@ -25,12 +25,15 @@
 - [x] Optimize Homepage SEO (title & meta description)
 - [x] Fix light mode character visibility in header/footer
 - [x] Create dedicated "AI Agents" section above SaaS platforms
+- [x] Split Txchya into Website (txchya.com) and AI Construct (ai.txchyon.com)
+- [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify UI and functionality across themes
-- [ ] Add Hero Images to all project cards [/]
-    - [ ] Update `ProjectCard.astro` to support images
-    - [ ] Generate assets via `generate_image`
-    - [ ] Update project arrays in `index.astro`
+- [/] Add Hero Images to all project cards [/]
+    - [x] Update `ProjectCard.astro` to support images
+    - [x] Split Txchya project endpoints
+    - [ ] Create/Map assets as they arrive
+    - [/] Update project arrays in `index.astro`
 - [ ] Fix markdown rendering (####) in `ProjectCard` modals
 - [ ] Final visual audit across all devices
 - [ ] Final Git push
