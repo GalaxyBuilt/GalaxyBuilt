@@ -38,9 +38,15 @@
     - [x] Section Headers (`text-slate-900 dark:text-white`)
     - [x] Footer design & consistency in light mode
 - [x] Fix markdown rendering (####) in `ProjectCard` modals
+- [ ] Refine Project Content & Visuals [/]
+    - [ ] Update `ProjectCard.astro` props (imagePosition, modalFullBackground)
+    - [ ] Update `index.astro` project arrays
+    - [ ] Reorganize Txchyon projects (Txchyon.com to Megablogs)
+    - [ ] Restore Txchyon Labs to Trading
+    - [ ] Enhance Txchya.com modals and framing
+- [x] Final visual audit across all devices
+- [x] Final Git push
 - [ ] Fix Theme Toggle Icons & Persistence [/]
     - [ ] Add head init script
     - [ ] Swap Sun/Moon icons
     - [ ] Verify persistence
-- [ ] Final visual audit across all devices
-- [ ] Final Git push

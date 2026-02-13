@@ -6,6 +6,7 @@ import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Roc
 const aiProjects = [
 	{
 		title: "Txchya.com",
+		image: "/images/txchya pretty.jpg",
 		description: "The digital identity and lore-hub of Txchya. An exploration of artificial consciousness and the mind behind the Txchyon ecosystem.",
 		details: `Txchya.com is the cultural and conceptual headquarters of the intelligence layer. It serves as the primary interface for understanding the lore, philosophy, and strategic positioning of the system.
 
@@ -18,7 +19,9 @@ She isn’t just an AI; she’s an influencer in the digital era. Her presence o
 - **Connective Brand**: The "Guided by Txchya" philosophy that permeates all Galaxy Built projects.`,
 		url: "https://txchya.com",
 		type: "ai",
-		tags: ["Identity", "Lore", "Influencer", "Aesthetic"]
+		tags: ["Identity", "Lore", "Influencer", "Aesthetic"],
+		imagePosition: "top",
+		modalFullBackground: true
 	},
 	{
 		title: "Txchya: Neural Influence",
@@ -83,7 +86,10 @@ Most AI tools are generic. FastAIFlow is proprietary infrastructure built around
 		url: "https://FastAIFlow.com",
 		type: "saas",
 		tags: ["AI Workflows", "Automation", "Low-Code", "Scalable Architecture"]
-	},
+	}
+];
+
+const megablogProjects = [
 	{
 		title: "Txchyon.com",
 		image: "/images/txchyon.jpg",
@@ -97,10 +103,7 @@ Most AI tools are generic. FastAIFlow is proprietary infrastructure built around
 		url: "https://txchyon.com",
 		type: "saas",
 		tags: ["DeFi", "Crypto", "Megablog", "Strategy"]
-	}
-];
-
-const megablogProjects = [
+	},
 	{
 		title: "RoofingMeter.com",
 		description: "Specialized construction tech platform and 'Megablog' for the roofing industry. Engineered with large-scale content architecture and planned evergreen guides.",
@@ -144,6 +147,7 @@ const tradingProjects = [
 	},
 	{
 		title: "Project Ultima",
+		image: "/images/Project Ulttima.jpg",
 		description: "Secret Research System - An institutional-grade platform for advanced market intelligence and predictive modeling.",
 		details: `Project Ultima is a proprietary research platform designed for advanced market intelligence and predictive modeling.
 
@@ -153,6 +157,20 @@ const tradingProjects = [
 - **Operational Precision**: Providing the technical backbone for top-tier market positioning and alpha generation.`,
 		type: "trading",
 		tags: ["Market Intelligence", "Secret Research", "Predictive Analytics"]
+	},
+	{
+		title: "Txchyon Labs",
+		image: "/images/Txchyon labs.jpg",
+		description: "The core R&D engine of the Txchyon ecosystem. Developing autonomous systems and neural orchestration layers.",
+		details: `Txchyon Labs is the primary research and development hub for the ecosystem. It focuses on pushing the boundaries of autonomous intelligence and system orchestration.
+		
+### R&D Capabilities
+- **Neural Frameworks**: Developing proprietary models for ecosystem-wide scaling.
+- **Autonomous Infrastructure**: Building the connective tissue between data, code, and execution.
+- **Strategic Innovation**: Methodical exploration of new technologies and market-dominance strategies.`,
+		url: "https://labs.txchyon.com",
+		type: "trading",
+		tags: ["R&D", "Neural Frameworks", "Infrastructure"]
 	},
 	{
 		title: "Project Omega",
@@ -170,15 +188,15 @@ const tradingProjects = [
 	{
 		title: "Txchyon Capital",
 		image: "/images/Txchyon Capital.png",
-		description: "Institutional-grade capital management and execution arm of the Txchyon ecosystem.",
-		details: `Txchyon Capital is the primary execution and management layer for the ecosystem's liquid assets. It follows a systemized approach to capital growth and preservation.
+		description: "PRIVATE: Institutional-grade capital management and execution arm of the Txchyon ecosystem.",
+		details: `Txchyon Capital is a private institutional-grade execution and management layer. Access is restricted to internal operations and strategic partners.
 
 ### Capital Orchestration
 - **Market Neutral Strategies**: Managing risk through multi-layer hedging.
 - **Institutional Execution**: Deploying capital with precision across decentralized and centralized venues.
 - **Long-Cycle Positioning**: Building authority and assets through methodical, systemized growth.`,
 		type: "trading",
-		tags: ["Capital Management", "Institutional", "Execution"]
+		tags: ["Capital Management", "Institutional", "Private"]
 	}
 ];
 

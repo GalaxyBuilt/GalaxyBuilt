@@ -11,9 +11,11 @@ interface Props {
 	type?: 'saas' | 'trading' | 'software' | 'ai';
 	image?: string;
 	video?: string;
+	imagePosition?: string;
+	modalFullBackground?: boolean;
 }
 
-const { title, description, details, url, github, tags = [], type = 'software', image, video } = Astro.props;
+const { title, description, details, url, github, tags = [], type = 'software', image, video, imagePosition = 'center 20%', modalFullBackground = false } = Astro.props;
 
 // Simple markdown-to-html parser for headers and bold text
 const parseMarkdown = (content: string) => {
@@ -47,13 +49,15 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 				loop 
 				muted 
 				playsinline 
-				class="w-full h-full object-cover object-[center_20%] group-hover:scale-110 transition-transform duration-700 ease-out"
+				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+				style={{ objectPosition: imagePosition }}
 			/>
 		) : image ? (
 			<img 
 				src={image} 
 				alt={title} 
-				class="w-full h-full object-cover object-[center_20%] group-hover:scale-110 transition-transform duration-700 ease-out"
+				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+				style={{ objectPosition: imagePosition }}
 				loading="lazy"
 			/>
 		) : null}
@@ -145,9 +149,9 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 			</div>
 
 			<!-- Body -->
-			<div class="p-0 overflow-y-auto space-y-0 text-slate-300 leading-relaxed font-light custom-scrollbar">
+			<div class="p-0 overflow-y-auto space-y-0 text-slate-300 leading-relaxed font-light custom-scrollbar relative">
 				<!-- Modal Hero Asset -->
-				{(image || video) && (
+				{!modalFullBackground && (image || video) && (
 					<div class="relative w-full aspect-[21/9] overflow-hidden border-b border-white/5">
 						{video ? (
 							<video 
@@ -156,19 +160,33 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 								loop 
 								muted 
 								playsinline 
-								class="w-full h-full object-cover object-[center_23%]"
+								class="w-full h-full object-cover"
+								style={{ objectPosition: imagePosition }}
 							/>
 						) : (
 							<img 
 								src={image} 
 								alt={title} 
-								class="w-full h-full object-cover object-[center_23%]"
+								class="w-full h-full object-cover"
+								style={{ objectPosition: imagePosition }}
 							/>
 						)}
 						<div class="absolute inset-0 bg-gradient-to-t from-galaxy-950 via-transparent to-transparent opacity-60"></div>
 					</div>
 				)}
-				<div class="p-6 md:p-8 space-y-6">
+
+				{modalFullBackground && image && (
+					<div class="absolute inset-0 -z-10 overflow-hidden">
+						<img 
+							src={image} 
+							alt="" 
+							class="w-full h-full object-cover opacity-20 blur-sm"
+						/>
+						<div class="absolute inset-0 bg-galaxy-950/40"></div>
+					</div>
+				)}
+
+				<div class="p-6 md:p-8 space-y-6 relative z-10">
 					<div class="prose prose-invert prose-indigo max-w-none text-sm md:text-base" set:html={processedDetails}>
 					</div>
 				</div>
