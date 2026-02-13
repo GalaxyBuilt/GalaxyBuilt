@@ -29,11 +29,14 @@
 - [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify UI and functionality across themes
-- [/] Add Hero Images to all project cards [/]
-    - [x] Update `ProjectCard.astro` to support images
-    - [x] Split Txchya project endpoints
-    - [ ] Create/Map assets as they arrive
-    - [/] Update project arrays in `index.astro` (EverRank, Omega, Ultima, Txchyon labs mapped)
+- [ ] Refine Hero Images Mapping (Strict 1:1 parity) [/]
+    - [x] Update `ProjectCard.astro` to support images & videos
+    - [ ] Clean up `index.astro` arrays (Remove mismatched assets)
+    - [ ] Add hero assets to Modal "Intelligence Reports"
+    - [ ] Adjust image framing (object-position: top center)
+- [ ] Fix Light Mode Visibility [/]
+    - [ ] Section Headers (`text-slate-900 dark:text-white`)
+    - [ ] Footer design & consistency in light mode
 - [x] Fix markdown rendering (####) in `ProjectCard` modals
 - [ ] Final visual audit across all devices
 - [ ] Final Git push

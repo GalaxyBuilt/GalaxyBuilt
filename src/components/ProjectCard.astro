@@ -47,13 +47,13 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 				loop 
 				muted 
 				playsinline 
-				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+				class="w-full h-full object-cover object-[center_20%] group-hover:scale-110 transition-transform duration-700 ease-out"
 			/>
 		) : image ? (
 			<img 
 				src={image} 
 				alt={title} 
-				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+				class="w-full h-full object-cover object-[center_20%] group-hover:scale-110 transition-transform duration-700 ease-out"
 				loading="lazy"
 			/>
 		) : null}
@@ -145,8 +145,32 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 			</div>
 
 			<!-- Body -->
-			<div class="p-6 md:p-8 overflow-y-auto space-y-6 text-slate-300 leading-relaxed font-light custom-scrollbar">
-				<div class="prose prose-invert prose-indigo max-w-none text-sm md:text-base" set:html={processedDetails}>
+			<div class="p-0 overflow-y-auto space-y-0 text-slate-300 leading-relaxed font-light custom-scrollbar">
+				<!-- Modal Hero Asset -->
+				{(image || video) && (
+					<div class="relative w-full aspect-[21/9] overflow-hidden border-b border-white/5">
+						{video ? (
+							<video 
+								src={video} 
+								autoplay 
+								loop 
+								muted 
+								playsinline 
+								class="w-full h-full object-cover object-[center_23%]"
+							/>
+						) : (
+							<img 
+								src={image} 
+								alt={title} 
+								class="w-full h-full object-cover object-[center_23%]"
+							/>
+						)}
+						<div class="absolute inset-0 bg-gradient-to-t from-galaxy-950 via-transparent to-transparent opacity-60"></div>
+					</div>
+				)}
+				<div class="p-6 md:p-8 space-y-6">
+					<div class="prose prose-invert prose-indigo max-w-none text-sm md:text-base" set:html={processedDetails}>
+					</div>
 				</div>
 			</div>
 
