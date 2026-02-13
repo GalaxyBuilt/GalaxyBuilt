@@ -52,3 +52,10 @@
 - [x] Ensure explicit visibility for Theme Toggle icons [x]
 - [x] Final visual audit across all devices
 - [x] Final Git push
+- [ ] Generate & Integrate High-Fidelity Hero Assets [/]
+    - [ ] Generate CodeSnap hero image
+    - [ ] Generate AI-Prompt Builder hero image
+    - [ ] Generate Next-Scanner hero image
+    - [ ] Generate ContentIQ hero image
+    - [ ] Move images to `public/images`
+    - [ ] Update `index.astro` image paths
