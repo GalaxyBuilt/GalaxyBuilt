@@ -29,14 +29,18 @@
 - [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
 - [x] Verify UI and functionality across themes
-- [ ] Refine Hero Images Mapping (Strict 1:1 parity) [/]
+- [x] Refine Hero Images Mapping (Strict 1:1 parity) [x]
     - [x] Update `ProjectCard.astro` to support images & videos
-    - [ ] Clean up `index.astro` arrays (Remove mismatched assets)
-    - [ ] Add hero assets to Modal "Intelligence Reports"
-    - [ ] Adjust image framing (object-position: top center)
-- [ ] Fix Light Mode Visibility [/]
-    - [ ] Section Headers (`text-slate-900 dark:text-white`)
-    - [ ] Footer design & consistency in light mode
+    - [x] Clean up `index.astro` arrays (Remove mismatched assets)
+    - [x] Add hero assets to Modal "Intelligence Reports"
+    - [x] Adjust image framing (object-position: top center)
+- [x] Fix Light Mode Visibility [x]
+    - [x] Section Headers (`text-slate-900 dark:text-white`)
+    - [x] Footer design & consistency in light mode
 - [x] Fix markdown rendering (####) in `ProjectCard` modals
+- [ ] Fix Theme Toggle Icons & Persistence [/]
+    - [ ] Add head init script
+    - [ ] Swap Sun/Moon icons
+    - [ ] Verify persistence
 - [ ] Final visual audit across all devices
 - [ ] Final Git push
