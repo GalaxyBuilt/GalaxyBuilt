@@ -33,7 +33,7 @@
     - [x] Update `ProjectCard.astro` to support images
     - [x] Split Txchya project endpoints
     - [ ] Create/Map assets as they arrive
-    - [/] Update project arrays in `index.astro`
-- [ ] Fix markdown rendering (####) in `ProjectCard` modals
+    - [/] Update project arrays in `index.astro` (EverRank, Omega, Ultima, Txchyon labs mapped)
+- [x] Fix markdown rendering (####) in `ProjectCard` modals
 - [ ] Final visual audit across all devices
 - [ ] Final Git push

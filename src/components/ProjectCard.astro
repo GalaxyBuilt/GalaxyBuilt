@@ -10,9 +10,10 @@ interface Props {
 	tags?: string[];
 	type?: 'saas' | 'trading' | 'software' | 'ai';
 	image?: string;
+	video?: string;
 }
 
-const { title, description, details, url, github, tags = [], type = 'software', image } = Astro.props;
+const { title, description, details, url, github, tags = [], type = 'software', image, video } = Astro.props;
 
 // Simple markdown-to-html parser for headers and bold text
 const parseMarkdown = (content: string) => {
@@ -37,18 +38,27 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <div class="glass-card group p-0 rounded-3xl flex flex-col relative overflow-hidden h-full border border-white/5 hover:border-accent-blue/30 transition-all duration-500">
-	<!-- Hero Image -->
-	{image && (
-		<div class="relative w-full aspect-[16/9] overflow-hidden">
+	<!-- Hero Asset -->
+	<div class="relative w-full aspect-[16/9] overflow-hidden bg-black/20">
+		{video ? (
+			<video 
+				src={video} 
+				autoplay 
+				loop 
+				muted 
+				playsinline 
+				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+			/>
+		) : image ? (
 			<img 
 				src={image} 
 				alt={title} 
 				class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
 				loading="lazy"
 			/>
-			<div class="absolute inset-0 bg-gradient-to-t from-galaxy-950 via-galaxy-950/20 to-transparent"></div>
-		</div>
-	)}
+		) : null}
+		<div class="absolute inset-0 bg-gradient-to-t from-galaxy-950 via-galaxy-950/20 to-transparent"></div>
+	</div>
 
 	<div class="p-6 space-y-4 flex-grow flex flex-col">
 		<!-- Background Highlight -->
