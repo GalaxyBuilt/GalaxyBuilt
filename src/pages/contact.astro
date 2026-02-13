@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Mail, MessageSquare, Send, User, Briefcase, Globe } from 'lucide-astro';
+---
+
+<Layout 
+	title="Contact | Galaxy Built"
+	description="Get in touch with Galaxy Built for institutional-grade AI systems, SaaS development, or strategic collaborations."
+>
+	<div class="max-w-4xl mx-auto py-12 px-6">
+		<div class="text-center space-y-4 mb-16 reveal-on-scroll">
+			<h1 class="text-4xl md:text-6xl font-black font-display tracking-tight">
+				Let's Build the <span class="text-gradient">Future.</span>
+			</h1>
+			<p class="text-slate-500 max-w-xl mx-auto">
+				Whether it's institutional-grade AI, high-velocity SaaS, or strategic system architecture—I'm ready to talk execution.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 py-8">
+			<div class="glass-card p-6 rounded-3xl text-center space-y-3 reveal-on-scroll">
+				<div class="w-12 h-12 rounded-2xl bg-accent-blue/10 text-accent-blue flex items-center justify-center mx-auto">
+					<Mail size={24} />
+				</div>
+				<h3 class="font-bold font-display">Email</h3>
+				<p class="text-sm text-slate-500">dev@everrank.app</p>
+			</div>
+			
+			<div class="glass-card p-6 rounded-3xl text-center space-y-3 reveal-on-scroll" style="transition-delay: 100ms;">
+				<div class="w-12 h-12 rounded-2xl bg-accent-purple/10 text-accent-purple flex items-center justify-center mx-auto">
+					<MessageSquare size={24} />
+				</div>
+				<h3 class="font-bold font-display">X / Twitter</h3>
+				<p class="text-sm text-slate-500">@galaxybuilt</p>
+			</div>
+
+			<div class="glass-card p-6 rounded-3xl text-center space-y-3 reveal-on-scroll" style="transition-delay: 200ms;">
+				<div class="w-12 h-12 rounded-2xl bg-accent-cyan/10 text-accent-cyan flex items-center justify-center mx-auto">
+					<Globe size={24} />
+				</div>
+				<h3 class="font-bold font-display">GitHub</h3>
+				<p class="text-sm text-slate-500">github.com/galaxybuilt</p>
+			</div>
+		</div>
+
+		<div class="glass-card p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden reveal-on-scroll">
+			<div class="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-accent-purple/5 -z-10"></div>
+			
+			<form class="space-y-6">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="space-y-2">
+						<label for="name" class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+							<User size={14} /> Full Name
+						</label>
+						<input 
+							type="text" 
+							id="name" 
+							placeholder="John Doe"
+							class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-accent-blue transition-all"
+							required
+						/>
+					</div>
+					<div class="space-y-2">
+						<label for="email" class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+							<Mail size={14} /> Email Address
+						</label>
+						<input 
+							type="email" 
+							id="email" 
+							placeholder="john@example.com"
+							class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-accent-blue transition-all"
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="space-y-2">
+						<label for="subject" class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+							<Briefcase size={14} /> Inquiry Category
+						</label>
+						<select 
+							id="subject" 
+							class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-accent-blue transition-all appearance-none cursor-pointer"
+							required
+						>
+							<option value="" disabled selected>Select Category</option>
+							<option value="saas">SaaS Platform Development</option>
+							<option value="ai">AI Workflow Orchestration</option>
+							<option value="trading">Institutional Trading Systems</option>
+							<option value="partnership">Strategic Partnership</option>
+							<option value="other">General Inquiry</option>
+						</select>
+					</div>
+					<div class="space-y-2">
+						<label for="budget" class="text-xs font-bold uppercase tracking-widest text-slate-400">Budget Range</label>
+						<select 
+							id="budget" 
+							class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-accent-blue transition-all appearance-none cursor-pointer"
+						>
+							<option value="" disabled selected>Select Budget</option>
+							<option value="tier1">$5k - $15k</option>
+							<option value="tier2">$15k - $50k</option>
+							<option value="tier3">$50k - $100k+</option>
+							<option value="partnership">Strategic Investment / Partnership</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="space-y-2">
+					<label for="message" class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+						<MessageSquare size={14} /> Your Message
+					</label>
+					<textarea 
+						id="message" 
+						rows="6" 
+						placeholder="Explain your vision or the specific problem we need to solve..."
+						class="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-accent-blue transition-all resize-none"
+						required
+					></textarea>
+				</div>
+
+				<button type="submit" class="btn-primary w-full py-5 text-sm tracking-widest uppercase flex items-center justify-center gap-3">
+					Initialize Transmission <Send size={20} />
+				</button>
+			</form>
+		</div>
+	</div>
+</Layout>
+
+<style>
+/* Custom select styles for dark/light mode */
+select option {
+	background: #050505;
+	color: white;
+}
+.light select option {
+	background: white;
+	color: #050505;
+}
+</style>
