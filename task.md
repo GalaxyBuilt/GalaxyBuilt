@@ -22,6 +22,10 @@
     - [x] Add JSON-LD Structured Data [ ]
     - [x] Create robots.txt [ ]
     - [x] Install & Configure Sitemap integration [ ]
+- [ ] Refine Roofing Meter (Home Services Megablog) [/]
+    - [ ] Update description & details for 11-pillar scope
+    - [ ] Generate high-fidelity Home Services hero image
+    - [ ] Integrate new image and content
 - [x] Optimize Homepage SEO (title & meta description)
 - [x] Fix light mode character visibility in header/footer
 - [x] Create dedicated "AI Agents" section above SaaS platforms
