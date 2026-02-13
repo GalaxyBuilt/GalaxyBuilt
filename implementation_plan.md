@@ -35,9 +35,25 @@ I recommend **Astro** for this project.
     - Implement "AI Agents" section above the SaaS platforms section.
     - Update page scroll logic for the new section.
 
-### Google Analytics Verification
-- **[VERIFY] [Layout.astro](file:///c:/Users/NefuTrades/galaxybuilt/src/layouts/Layout.astro)**
-    - Ensure `G-SD1015FGKZ` is correctly implemented at the top of the `<head>`.
+
+### Project Card Visuals & Content
+- **[MODIFY] [ProjectCard.astro](file:///c:/Users/NefuTrades/galaxybuilt/src/components/ProjectCard.astro)**
+    - Add `image` prop to the interface.
+    - Implement a hero image section with aspect-ratio and lazy loading.
+    - Add simple markdown-to-html parsing for the `details` modal to handle `###` and `####` headers.
+    - Ensure images have a subtle hover scale effect.
+
+- **[MODIFY] [index.astro](file:///c:/Users/NefuTrades/galaxybuilt/src/pages/index.astro)**
+    - Add `image` paths to all project objects in `aiProjects`, `saasProjects`, `megablogProjects`, `tradingProjects`, and `softwareProjects`.
+    - Assets will be generated and stored in `/public/images/projects/`.
+
+### Assets Generation
+- Generate high-fidelity hero images for:
+    - Txchya (Futuristic AI Construct)
+    - EverRank (Digital SEO Architecture)
+    - FastAIFlow (Connected AI Nodes)
+    - Project Genesis (Bitcoin / Institutional)
+    ... and others.
 
 ## Verification Plan
 ### Automated Tests

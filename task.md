@@ -23,12 +23,14 @@
     - [x] Create robots.txt [ ]
     - [x] Install & Configure Sitemap integration [ ]
 - [x] Optimize Homepage SEO (title & meta description)
-- [/] Fix light mode character visibility in header/footer
-- [ ] Create dedicated "AI Agents" section above SaaS platforms
-- [ ] Verify UI and functionality across themes
-- [x] Final Polish & Assets [/]
-    - [x] Integrate custom Favicon Kit [ ]
-    - [x] Update Site Manifest [ ]
-    - [x] Dark Mode Background (og-hero.jpg integrated) [ ]
-    - [x] Verification and testing [ ]
-    - [x] Final Git push [ ]
+- [x] Fix light mode character visibility in header/footer
+- [x] Create dedicated "AI Agents" section above SaaS platforms
+- [x] Verify Google Analytics (G-SD1015FGKZ) is firing correctly
+- [x] Verify UI and functionality across themes
+- [ ] Add Hero Images to all project cards [/]
+    - [ ] Update `ProjectCard.astro` to support images
+    - [ ] Generate assets via `generate_image`
+    - [ ] Update project arrays in `index.astro`
+- [ ] Fix markdown rendering (####) in `ProjectCard` modals
+- [ ] Final visual audit across all devices
+- [ ] Final Git push
