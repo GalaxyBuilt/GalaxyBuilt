@@ -8,10 +8,11 @@ interface Props {
 }
 
 const { title, description = "Galaxy Built - Developer Portfolio & Projects" } = Astro.props;
+const ogImageUrl = new URL('/og-hero.jpg', Astro.site).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 	<head>
 		<!-- Google tag (gtag.js) -->
 		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SD1015FGKZ"></script>
@@ -44,8 +45,9 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<meta property="og:site_name" content="Galaxy Built" />
 		<meta property="og:title" content={title.includes('Galaxy Built') ? title : `${title} | Galaxy Built`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="https://galaxybuilt.dev/og-hero.jpg" />
-		<meta property="og:image:secure_url" content="https://galaxybuilt.dev/og-hero.jpg" />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:url" content={ogImageUrl} />
+		<meta property="og:image:secure_url" content={ogImageUrl} />
 		<meta property="og:image:type" content="image/jpeg" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
@@ -58,7 +60,7 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<meta name="twitter:creator" content="@galaxybuilt" />
 		<meta name="twitter:title" content={title.includes('Galaxy Built') ? title : `${title} | Galaxy Built`} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="https://galaxybuilt.dev/og-hero.jpg" />
+		<meta name="twitter:image" content={ogImageUrl} />
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json">
@@ -67,7 +69,7 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 				"@type": "Person",
 				"name": "Galaxy Built",
 				"url": "https://galaxybuilt.dev",
-				"image": "https://galaxybuilt.dev/images/logo.jpg",
+				"image": new URL('/images/logo.jpg', Astro.site).toString(),
 				"sameAs": [
 					"https://github.com/galaxybuilt",
 					"https://x.com/galaxybuilt",
