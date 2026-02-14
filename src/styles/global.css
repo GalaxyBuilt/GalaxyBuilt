@@ -83,13 +83,34 @@
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.1);
+  }
+
+  :root.dark .glass-card {
+    box-shadow: 0 10px 40px -20px var(--color-accent-blue);
+  }
+
+  .glass-card:nth-child(even) {
+    animation-duration: 7s;
+    animation-delay: 1s;
+  }
+
+  .glass-card:nth-child(3n) {
+    animation-duration: 8s;
+    animation-delay: 0.5s;
   }
 
   .glass-card:hover {
     border-color: var(--color-accent-blue);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+    animation-play-state: paused;
+  }
+
+  :root.dark .glass-card:hover {
+    box-shadow: 0 0 50px -10px var(--color-accent-blue);
   }
 
   .text-gradient {
@@ -133,6 +154,24 @@
   .reveal-on-scroll.active {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-15px) rotate(0.5deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
   }
 }
 
