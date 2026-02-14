@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket } from 'lucide-astro';
+import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket, Music, Youtube } from 'lucide-astro';
 
 const aiProjects = [
 	{
@@ -249,6 +249,52 @@ const softwareProjects = [
 		tags: ["AI Content", "SEO Engine", "Automation"]
 	}
 ];
+
+const musicProjects = [
+	{
+		title: "Txchya — Cyberpunk Ambient",
+		image: "/images/cyberpunkambient.jpg",
+		description: "Cinematic architecture for builders, coders, and night operators. Immersive cyberpunk atmospheres with structured rhythm and high-fidelity neural pulse.",
+		details: `Txchya is the cinematic, futuristic arm of your sound portfolio. The core identity is cyberpunk ambient with controlled pulse. It’s not pure background noise. It’s immersive atmosphere with occasional structured rhythm — unexpected drums, subtle propulsion, tension building under neon skylines.
+
+### The Catalog Strategy
+The catalog strategy is world-based, not song-based. Instead of random releases, the catalog is organized into environments and narrative clusters:
+- **Neon City Series**: Neon Tokyo 3077, Neon Shanghai 3091, Rain on Circuit District.
+- **Deep Space Archive**: Megastructure Orbit, Dim Star Encasement, Silent Dyson Ring.
+- **Hostile Worlds**: Lava Planet Pulse, Smoke Beneath the Crust, Terraform Failure.
+- **AI Consciousness Series**: Signal from 3077, Autonomous Mind Awake, Archive Node.
+
+### System Advantage
+Txchya ties naturally into Txchyon and your AI ecosystem. It frames sound as an audiovisual IP, serving as the "civilization still alive in the dark."`,
+		url: "https://www.txchya.com",
+		youtube: "https://www.youtube.com/@txchyaai",
+		type: "music",
+		tags: ["Cyberpunk", "Ambient", "Cinematic", "Focus"]
+	},
+	{
+		title: "Blackhole Ambient",
+		image: "/images/blackhole.jpg",
+		description: "Pure emotional void and infinite space. Soundtracks for deep thought, solitude, and slow immersion into the singularity.",
+		details: `Blackhole Ambient is pure dark ambient. No beat. No structure. No rhythm to move to. Just emotional atmosphere and space. Where Txchya has pulse, Blackhole has void.
+
+### The Sonic Rule
+If there’s percussion or structured beat, it does not belong here. If it feels like endless floating in space — it belongs.
+
+### Designed For:
+- Meditation & Solitude
+- Emotional processing
+- Deep thought
+- Late-night isolation focus
+- Sleep/slow immersion
+
+### Positioning
+Blackhole Ambient = Pure Emotional Void. It stands alone as pure art, representing what remains when civilization is gone.`,
+		url: "https://blackholeambient.com/",
+		youtube: "https://www.youtube.com/@BlackHoleAmbient",
+		type: "music",
+		tags: ["Dark Ambient", "Void", "Emotional", "Space"]
+	}
+];
 ---
 
 <Layout 
@@ -494,6 +540,25 @@ const softwareProjects = [
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{softwareProjects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</section>
+
+		<!-- Music Licensing Section -->
+		<section id="music" class="space-y-12 reveal-on-scroll">
+			<div class="flex items-center gap-6">
+				<div class="p-4 rounded-3xl glass-card text-accent-purple">
+					<Music size={32} />
+				</div>
+				<div>
+					<h2 class="text-4xl font-black font-display dark:text-white text-slate-900">Music Licensing</h2>
+					<p class="text-slate-500">Cinematic sound domains and immersive ambient architectures.</p>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{musicProjects.map(project => (
 					<ProjectCard {...project} />
 				))}
 			</div>

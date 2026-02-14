@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket, Sun, Moon } from 'lucide-astro';
+import { ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket, Sun, Moon, Menu, X, ChevronDown, ArrowUp, Music, Youtube } from 'lucide-astro';
 import '../styles/global.css';
 
 interface Props {
@@ -102,18 +102,41 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		<div class="noise-overlay"></div>
 		
 		<nav class="fixed top-0 w-full z-50 px-4 md:px-6 py-4 flex justify-center">
-			<div class="max-w-7xl w-full flex items-center justify-between px-4 md:px-6 py-3 glass-card rounded-2xl">
+			<div class="max-w-7xl w-full flex items-center justify-between px-4 md:px-6 py-3 glass-card rounded-2xl relative shadow-2xl transition-all duration-300">
+				<!-- Brand -->
 				<a href="/" class="flex items-center gap-2 md:gap-3 group">
 					<img src="/images/logo.jpg" alt="Galaxy Built Logo" class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl object-cover ring-2 ring-white/10 group-hover:ring-accent-blue/50 transition-all" />
 					<span class="text-lg md:text-2xl font-black font-display tracking-tight text-slate-900 dark:text-white hover:text-accent-blue transition-colors">GALAXY<span class="text-accent-blue font-light">BUILT</span></span>
 				</a>
 				
+				<!-- Desktop Navigation -->
 				<div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-500 dark:text-slate-400">
-					<a href="#saas" class="hover:text-black dark:hover:text-white transition-colors">SaaS</a>
-					<a href="#megablogs" class="hover:text-black dark:hover:text-white transition-colors">Megablogs</a>
-					<a href="#trading" class="hover:text-black dark:hover:text-white transition-colors">Trading</a>
-					<a href="#software" class="hover:text-black dark:hover:text-white transition-colors">Software</a>
-					
+					<!-- Teleport Dropdown -->
+					<div class="relative group/dropdown">
+						<button class="flex items-center gap-1.5 hover:text-black dark:hover:text-white transition-colors cursor-pointer py-2">
+							Explore Systems <ChevronDown size={14} />
+						</button>
+						<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 group-hover/dropdown:pointer-events-auto transition-all duration-300">
+							<div class="glass-card rounded-2xl p-2 border border-white/10 shadow-2xl backdrop-blur-2xl bg-white/5 overflow-hidden">
+								<a href="#saas" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-accent-blue transition-all group">
+									<Rocket size={16} /> SaaS Platforms
+								</a>
+								<a href="#megablogs" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-accent-blue transition-all group">
+									<Cpu size={16} /> Megablogs
+								</a>
+								<a href="#trading" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-accent-blue transition-all group">
+									<LineChart size={16} /> Trading Systems
+								</a>
+								<a href="#software" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-accent-blue transition-all group">
+									<Code2 size={16} /> Software & Tools
+								</a>
+								<a href="#music" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 hover:text-accent-purple transition-all group">
+									<Music size={16} /> Music Licensing
+								</a>
+							</div>
+						</div>
+					</div>
+
 					<button id="themeToggle" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
 						<Moon class="block dark:hidden" size={20} />
 						<Sun class="hidden dark:block" size={20} />
@@ -122,18 +145,52 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 					<a href="https://x.com/galaxybuilt" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">
 						<Twitter size={18} />
 					</a>
-				</div>
-
-					<button id="themeToggleMobile" class="md:hidden p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
-						<Moon class="block dark:hidden" size={20} />
-						<Sun class="hidden dark:block" size={20} />
-					</button>
 
 					<a href="/contact" class="btn-primary text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6">
 						Contact me
 					</a>
+				</div>
+
+				<!-- Mobile Controls -->
+				<div class="flex md:hidden items-center gap-2">
+					<button id="themeToggleMobile" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
+						<Moon class="block dark:hidden" size={20} />
+						<Sun class="hidden dark:block" size={20} />
+					</button>
+					<button id="mobileMenuToggle" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-accent-blue transition-all cursor-pointer">
+						<Menu id="menuIcon" size={24} />
+						<X id="closeIcon" class="hidden" size={24} />
+					</button>
+				</div>
+			</div>
+
+			<!-- Mobile Navigation Overlay -->
+			<div id="mobileMenuOverlay" class="fixed inset-0 top-[72px] z-40 bg-galaxy-950/90 backdrop-blur-2xl opacity-0 pointer-events-none translate-y-4 transition-all duration-300 md:hidden overflow-y-auto">
+				<div class="max-w-7xl mx-auto px-6 py-12 space-y-8">
+					<div class="grid grid-cols-1 gap-4">
+						<a href="#saas" class="mobile-nav-link"><Rocket size={20} /> SaaS Platforms</a>
+						<a href="#megablogs" class="mobile-nav-link"><Cpu size={20} /> Megablogs</a>
+						<a href="#trading" class="mobile-nav-link"><LineChart size={20} /> Trading Systems</a>
+						<a href="#software" class="mobile-nav-link"><Code2 size={20} /> Software & Tools</a>
+						<a href="#music" class="mobile-nav-link"><Music size={20} /> Music Licensing</a>
+						<a href="/contact" class="mobile-nav-link text-accent-cyan"><Mail size={20} /> Contact me</a>
+					</div>
+					<div class="pt-8 border-t border-white/5 flex gap-4">
+						<a href="https://github.com/galaxybuilt" class="p-4 rounded-2xl glass-card text-white flex-grow flex items-center justify-center gap-3">
+							<Github size={20} /> GitHub
+						</a>
+						<a href="https://x.com/galaxybuilt" class="p-4 rounded-2xl glass-card text-white flex-grow flex items-center justify-center gap-3">
+							<Twitter size={20} /> Twitter
+						</a>
+					</div>
+				</div>
 			</div>
 		</nav>
+
+		<!-- Back to Top Button -->
+		<button id="backToTop" class="fixed bottom-8 right-8 z-[60] p-4 rounded-2xl glass-card text-accent-blue opacity-0 translate-y-10 scale-90 pointer-events-none hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-2xl border-accent-blue/20">
+			<ArrowUp size={24} />
+		</button>
 
 		<script>
 			// Theme Toggle
@@ -174,6 +231,52 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 			}, observerOptions);
 
 			document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+			// Mobile Menu Logic
+			const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+			const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+			const menuIcon = document.getElementById('menuIcon');
+			const closeIcon = document.getElementById('closeIcon');
+			
+			let isMenuOpen = false;
+			
+			const toggleMenu = () => {
+				isMenuOpen = !isMenuOpen;
+				if (isMenuOpen) {
+					mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+					menuIcon.classList.add('hidden');
+					closeIcon.classList.remove('hidden');
+					document.body.style.overflow = 'hidden';
+				} else {
+					mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+					menuIcon.classList.remove('hidden');
+					closeIcon.classList.add('hidden');
+					document.body.style.overflow = '';
+				}
+			};
+			
+			mobileMenuToggle?.addEventListener('click', toggleMenu);
+			
+			// Close mobile menu on link click
+			document.querySelectorAll('.mobile-nav-link').forEach(link => {
+				link.addEventListener('click', () => {
+					if (isMenuOpen) toggleMenu();
+				});
+			});
+
+			// Back to Top Logic
+			const backToTop = document.getElementById('backToTop');
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 500) {
+					backToTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10', 'scale-90');
+				} else {
+					backToTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10', 'scale-90');
+				}
+			});
+			
+			backToTop?.addEventListener('click', () => {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			});
 		</script>
 
 		<main class="relative pt-32 pb-20 px-6">

@@ -1,21 +1,21 @@
 ---
-import { ExternalLink, Github } from 'lucide-astro';
+import { ExternalLink, Github, Youtube } from 'lucide-astro';
 
 interface Props {
 	title: string;
 	description: string;
 	details?: string;
 	url?: string;
-	github?: string;
+	youtube?: string;
 	tags?: string[];
-	type?: 'saas' | 'trading' | 'software' | 'ai';
+	type?: 'saas' | 'trading' | 'software' | 'ai' | 'music';
 	image?: string;
 	video?: string;
 	imagePosition?: string;
 	modalFullBackground?: boolean;
 }
 
-const { title, description, details, url, github, tags = [], type = 'software', image, video, imagePosition = 'center 20%', modalFullBackground = false } = Astro.props;
+const { title, description, details, url, github, youtube, tags = [], type = 'software', image, video, imagePosition = 'center 20%', modalFullBackground = false } = Astro.props;
 
 // Simple markdown-to-html parser for headers and bold text
 const parseMarkdown = (content: string) => {
@@ -33,7 +33,8 @@ const typeColors = {
 	saas: 'bg-blue-500/10 text-blue-600 dark:text-cyan-400 border-blue-200 dark:border-cyan-500/30',
 	trading: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-500/30',
 	software: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30',
-	ai: 'bg-accent-blue/10 text-accent-blue dark:text-accent-cyan border-accent-blue/20 dark:border-accent-cyan/30'
+	ai: 'bg-accent-blue/10 text-accent-blue dark:text-accent-cyan border-accent-blue/20 dark:border-accent-cyan/30',
+	music: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-500/30'
 };
 
 const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
@@ -77,6 +78,11 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 				{github && (
 					<a href={github} target="_blank" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-all">
 						<Github size={18} />
+					</a>
+				)}
+				{youtube && (
+					<a href={youtube} target="_blank" class="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-rose-500 transition-all">
+						<Youtube size={18} />
 					</a>
 				)}
 				{url && (
@@ -197,6 +203,11 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 				{url && (
 					<a href={url} target="_blank" class="btn-primary w-full text-center py-4 rounded-2xl text-xs tracking-widest uppercase">
 						Access System
+					</a>
+				)}
+				{youtube && (
+					<a href={youtube} target="_blank" class="glass-card w-full text-center py-4 rounded-2xl text-xs tracking-widest uppercase hover:bg-rose-500/10 hover:text-rose-500 transition-all">
+						YouTube Channel
 					</a>
 				)}
 				{github && (

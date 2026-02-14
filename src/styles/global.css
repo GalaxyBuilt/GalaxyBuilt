@@ -93,6 +93,18 @@
     @apply scale-105 shadow-lg shadow-accent-blue/20;
     filter: brightness(1.1);
   }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 @layer utilities {
