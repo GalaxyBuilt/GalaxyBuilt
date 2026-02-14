@@ -98,6 +98,30 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 		</script>
 	</head>
 	<body class="selection:bg-accent-blue/30 selection:text-white transition-colors duration-500">
+		<div id="cursor" class="custom-cursor hidden md:block"></div>
+		
+		<!-- System Status Ticker -->
+		<div class="fixed top-0 w-full z-[60] bg-galaxy-950/80 backdrop-blur-md border-b border-white/5 py-1.5 overflow-hidden flex items-center">
+			<div class="flex whitespace-nowrap animate-marquee">
+				<div class="flex items-center gap-8 px-4 text-[9px] font-mono tracking-[0.2em] text-accent-cyan/60 uppercase">
+					<span>[SYSTEM: <span class="text-emerald-500">ONLINE</span>]</span>
+					<span>[TOPICAL AUTHORITY: <span class="text-white">SCALING</span>]</span>
+					<span>[GENESIS TRADING: <span class="text-white">ACTIVE</span>]</span>
+					<span>[AI NEURAL SYNC: <span class="text-accent-blue">STRIKE READY</span>]</span>
+					<span>[GALAXY BUILT PROTOCOL: <span class="text-white">ESTABLISHED</span>]</span>
+					<span>[INFRASTRUCTURE: <span class="text-white">INSTITUTIONAL GRADE</span>]</span>
+				</div>
+				<div class="flex items-center gap-8 px-4 text-[9px] font-mono tracking-[0.2em] text-accent-cyan/60 uppercase">
+					<span>[SYSTEM: <span class="text-emerald-500">ONLINE</span>]</span>
+					<span>[TOPICAL AUTHORITY: <span class="text-white">SCALING</span>]</span>
+					<span>[GENESIS TRADING: <span class="text-white">ACTIVE</span>]</span>
+					<span>[AI NEURAL SYNC: <span class="text-accent-blue">STRIKE READY</span>]</span>
+					<span>[GALAXY BUILT PROTOCOL: <span class="text-white">ESTABLISHED</span>]</span>
+					<span>[INFRASTRUCTURE: <span class="text-white">INSTITUTIONAL GRADE</span>]</span>
+				</div>
+			</div>
+		</div>
+
 		<div class="mesh-bg"></div>
 		<div class="noise-overlay"></div>
 		
@@ -226,11 +250,43 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('active');
+						
+						// Dynamic Accent Shift Logic
+						if (entry.target.tagName === 'SECTION') {
+							const id = entry.target.id;
+							const root = document.documentElement;
+							
+							if (id === 'trading') {
+								root.style.setProperty('--color-accent-blue', '#8b5cf6'); // Purple
+								root.style.setProperty('--color-accent-cyan', '#10b981'); // Green
+							} else if (id === 'music') {
+								root.style.setProperty('--color-accent-blue', '#f43f5e'); // Rose
+								root.style.setProperty('--color-accent-cyan', '#e879f9'); // Pink
+							} else {
+								// Reset to default
+								root.style.setProperty('--color-accent-blue', '#3b82f6'); 
+								root.style.setProperty('--color-accent-cyan', '#22d3ee');
+							}
+						}
 					}
 				});
 			}, observerOptions);
 
-			document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+			document.querySelectorAll('.reveal-on-scroll, section[id]').forEach(el => observer.observe(el));
+
+			// Custom Cursor Logic
+			const cursor = document.getElementById('cursor');
+			document.addEventListener('mousemove', (e) => {
+				if (cursor) {
+					cursor.style.left = e.clientX + 'px';
+					cursor.style.top = e.clientY + 'px';
+				}
+			});
+
+			document.querySelectorAll('a, button, [data-modal-target]').forEach(el => {
+				el.addEventListener('mouseenter', () => cursor?.classList.add('hover'));
+				el.addEventListener('mouseleave', () => cursor?.classList.remove('hover'));
+			});
 
 			// Mobile Menu Logic
 			const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -279,7 +335,7 @@ const { title, description = "Galaxy Built - Developer Portfolio & Projects" } =
 			});
 		</script>
 
-		<main class="relative pt-32 pb-20 px-6">
+		<main class="relative pt-40 pb-20 px-6">
 			<slot />
 		</main>
 

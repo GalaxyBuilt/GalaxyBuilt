@@ -41,6 +41,12 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <div class="glass-card group p-0 rounded-3xl flex flex-col relative overflow-hidden h-full border border-white/5 hover:border-accent-blue/30 transition-all duration-500">
+	<!-- Border Beam -->
+	<div class="absolute inset-0 pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+		<svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+			<rect x="0" y="0" width="100" height="100" rx="24" fill="none" stroke="var(--color-electric-blue)" stroke-width="0.5" style="vector-effect: non-scaling-stroke; animation: border-beam 4s linear infinite; stroke-dasharray: 20 80; stroke-linecap: round;" />
+		</svg>
+	</div>
 	<!-- Hero Asset -->
 	<div class="relative w-full aspect-[16/9] overflow-hidden bg-black/20">
 		{video ? (
@@ -133,16 +139,17 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 {details && (
 	<div 
 		id={cardId} 
-		class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-6 backdrop-blur-xl bg-galaxy-950/80 reveal-trigger"
+		class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-6 backdrop-blur-xl bg-galaxy-950/90 reveal-trigger classified-modal"
 	>
-		<div class="glass-card max-w-2xl w-full max-h-[90vh] rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl border-white/10 animate-in fade-in zoom-in duration-300">
+		<div class="scanline"></div>
+		<div class="glass-card max-w-2xl w-full max-h-[90vh] rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl border-white/10 animate-in fade-in zoom-in duration-300 crt-flicker">
 			<!-- Header image fallback/placeholder in modal? Maybe better to keep it clean -->
 			<!-- Header -->
 			<div class="p-6 md:p-8 border-b border-white/5 flex justify-between items-center bg-white/5">
 				<div>
 					<div class="flex items-center gap-2 mb-1">
-						<span class="w-2 h-2 rounded-full bg-accent-blue"></span>
-						<span class="text-[10px] font-black tracking-[0.3em] text-accent-blue uppercase">Classified Intelligence</span>
+						<span class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></span>
+						<span class="text-[10px] font-black tracking-[0.3em] text-accent-blue uppercase font-mono">Classified Intelligence // GALAXY_BUILT_CORE</span>
 					</div>
 					<h2 class="text-2xl md:text-3xl font-black font-display text-white">{title}</h2>
 				</div>
@@ -193,7 +200,7 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 				)}
 
 				<div class="p-6 md:p-8 space-y-6 relative z-10">
-					<div class="prose prose-invert prose-indigo max-w-none text-sm md:text-base" set:html={processedDetails}>
+					<div class="prose prose-invert prose-indigo max-w-none text-sm md:text-base font-mono leading-relaxed" data-typewriter set:html={processedDetails}>
 					</div>
 				</div>
 			</div>
@@ -274,6 +281,47 @@ const cardId = `card-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
 	// Run on initial load
 	setupModals();
+
+	// Typewriter effect for classified modals
+	const setupTypewriter = (modalId: string) => {
+		const modal = document.getElementById(modalId);
+		const container = modal?.querySelector('[data-typewriter]');
+		if (!container) return;
+
+		const originalHTML = container.getAttribute('data-original-html') || container.innerHTML;
+		if (!container.hasAttribute('data-original-html')) {
+			container.setAttribute('data-original-html', originalHTML);
+		}
+
+		container.innerHTML = '';
+		let i = 0;
+		const fullText = originalHTML;
+		
+		// Simple typewriter that respects HTML tags roughly
+		// For a more robust version we'd need a virtual DOM but this is fine for static text
+		const type = () => {
+			if (i < fullText.length) {
+				// If we find an opening tag, skip to the end of it
+				if (fullText[i] === '<') {
+					const tagEnd = fullText.indexOf('>', i);
+					i = tagEnd + 1;
+				} else {
+					i++;
+				}
+				container.innerHTML = fullText.substring(0, i);
+				setTimeout(type, 2);
+			}
+		};
+		type();
+	};
+
+	const openButtons = document.querySelectorAll('[data-modal-target]');
+	openButtons.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const targetId = btn.getAttribute('data-modal-target');
+			if (targetId) setupTypewriter(targetId);
+		});
+	});
 
 	// Run on view transitions/navigation if applicable
 	document.addEventListener('astro:after-swap', setupModals);
