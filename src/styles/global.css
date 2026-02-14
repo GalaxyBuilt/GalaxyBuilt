@@ -11,23 +11,30 @@
   --color-accent-purple: #8b5cf6;
   --color-accent-cyan: #22d3ee;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
-
-  --color-electric-blue: #00e5ff;
 }
 
 @layer base {
   :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: rgba(0, 0, 0, 0.05);
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-border: rgba(0, 0, 0, 0.08);
-    --mesh-opacity: 0;
+    --bg-primary: #faf5ff;
+    /* Light lavender tint */
+    --bg-secondary: #fdf2f8;
+    /* Light pink tint */
+    --text-primary: #1e1b4b;
+    /* Deep navy/purple */
+    --text-secondary: #4338ca;
+    /* Indigo */
+    --border-color: rgba(217, 70, 239, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(217, 70, 239, 0.2);
+    --mesh-opacity: 0.5;
+    /* High visibility for neon ripples */
+    --color-electric-blue: #d946ef;
+    /* Vibrant Neon Purple */
+    --color-accent-blue: #8b5cf6;
+    /* Purple */
+    --color-accent-cyan: #ec4899;
+    /* Pink */
 
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -45,6 +52,8 @@
     --glass-bg: rgba(10, 10, 12, 0.4);
     --glass-border: rgba(255, 255, 255, 0.1);
     --mesh-opacity: 1;
+    --color-electric-blue: #00e5ff;
+    /* Classic Electric Blue */
 
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -241,7 +250,7 @@
   transform: translate(-50%, -50%);
   transition: width 0.3s, height 0.3s, background 0.3s;
   z-index: 9999;
-  mix-blend-mode: screen;
+  mix-blend-mode: difference;
 }
 
 .custom-cursor.hover {
@@ -261,9 +270,9 @@
   z-index: -1;
   background-color: var(--bg-primary);
   background-image:
-    radial-gradient(at var(--x, 0%) var(--y, 0%), hsla(220, 100%, 50%, 0.1) 0px, transparent 50%),
-    radial-gradient(at var(--nx, 100%) var(--ny, 0%), hsla(280, 100%, 50%, 0.1) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, hsla(190, 100%, 50%, 0.05) 0px, transparent 50%);
+    radial-gradient(at var(--x, 0%) var(--y, 0%), hsla(280, 100%, 70%, 0.15) 0px, transparent 50%),
+    radial-gradient(at var(--nx, 100%) var(--ny, 0%), hsla(320, 100%, 70%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(250, 100%, 70%, 0.1) 0px, transparent 50%);
   opacity: var(--mesh-opacity);
   transition: all 0.5s ease-out;
 }
