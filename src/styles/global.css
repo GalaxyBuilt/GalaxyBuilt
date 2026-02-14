@@ -307,7 +307,8 @@
   height: 40px;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
+  /* Better for dark cursor on light bg */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,14 +316,25 @@
   animation: galaxy-spin 10s linear infinite;
 }
 
+:root.dark .custom-cursor {
+  mix-blend-mode: screen;
+  /* Revert for dark mode */
+}
+
 .galaxy-core {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: white;
+  background: #1e1b4b;
+  /* Deep purple/black for light mode */
   border-radius: 50%;
-  box-shadow: 0 0 15px 5px white, 0 0 30px 10px var(--color-accent-blue);
+  box-shadow: 0 0 15px 5px rgba(139, 92, 246, 0.4), 0 0 30px 10px rgba(139, 92, 246, 0.2);
   animation: galaxy-pulse 2s ease-in-out infinite;
+}
+
+:root.dark .galaxy-core {
+  background: white;
+  box-shadow: 0 0 15px 5px white, 0 0 30px 10px var(--color-accent-blue);
 }
 
 .galaxy-arm {
@@ -331,9 +343,14 @@
   height: 140%;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-top-color: var(--color-accent-purple);
+  border-top-color: #4c1d95;
+  /* Darker purple arm */
   filter: blur(6px);
   opacity: 0.6;
+}
+
+:root.dark .galaxy-arm {
+  border-top-color: var(--color-accent-purple);
 }
 
 .galaxy-arm-1 {
@@ -343,12 +360,20 @@
 .galaxy-arm-2 {
   transform: rotate(120deg) scale(1, 0.4);
   opacity: 0.4;
-  border-top-color: var(--color-accent-cyan);
+  border-top-color: #701a75;
 }
 
 .galaxy-arm-3 {
   transform: rotate(240deg) scale(1, 0.4);
   opacity: 0.3;
+  border-top-color: #1e1b4b;
+}
+
+:root.dark .galaxy-arm-2 {
+  border-top-color: var(--color-accent-cyan);
+}
+
+:root.dark .galaxy-arm-3 {
   border-top-color: white;
 }
 
